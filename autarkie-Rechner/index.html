@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Autarkie Rechner Wohnmobil | Wie lange reicht meine Batterie?</title>
+
+<meta name="description" content="Autarkie Rechner für Wohnmobil und Camper: Berechne, wie viele Tage deine Batterie bei deinem täglichen Stromverbrauch reicht.">
+<meta name="keywords" content="Autarkie Rechner Wohnmobil, Wohnmobil Autarkie berechnen, LiFePO4 Autarkie Rechner, Batterie Reichweite Camper, Wohnmobil Stromversorgung">
+<meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"Wie berechne ich die Autarkie im Wohnmobil?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Die nutzbare Batteriekapazität in Wattstunden wird durch den täglichen Stromverbrauch geteilt. Das Ergebnis zeigt die mögliche Autarkie in Tagen."
+}
+},
+{
+"@type":"Question",
+"name":"Wie lange reicht eine 200Ah LiFePO4 Batterie?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Bei 12 Volt und 90 Prozent nutzbarer Kapazität stehen rund 2160 Wh zur Verfügung. Bei 720 Wh Tagesverbrauch ergibt das etwa drei Tage Autarkie."
+}
+},
+{
+"@type":"Question",
+"name":"Welche Entladetiefe ist bei LiFePO4 sinnvoll?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Viele Wohnmobilbesitzer rechnen mit etwa 90 Prozent nutzbarer Kapazität. Die genauen Herstellerangaben sollten jedoch beachtet werden."
+}
+},
+{
+"@type":"Question",
+"name":"Beeinflusst Solar die Autarkie?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Ja. Eine Solaranlage kann den täglichen Verbrauch teilweise oder vollständig ausgleichen und die Autarkie erheblich verlängern."
+}
+}
+]
+}
+</script>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:20px;
+color:#222;
+}
+
+.back{
+max-width:820px;
+margin:0 auto 15px auto;
+}
+
+.back a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+max-width:820px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:26px;
+margin-bottom:10px;
+color:#0d6efd;
+}
+
+h2{
+margin-top:30px;
+color:#222;
+}
+
+p{
+line-height:1.6;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:18px;
+background:#0077cc;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#005fa3;
+}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#eef7ff;
+border-left:5px solid #0077cc;
+border-radius:6px;
+}
+
+.info-box{
+background:#f8fbff;
+border-left:5px solid #0d6efd;
+padding:15px;
+border-radius:6px;
+margin-top:20px;
+}
+
+.links{
+margin-top:30px;
+padding:15px;
+background:#f5f7fa;
+border-radius:8px;
+}
+
+.links ul{
+padding-left:20px;
+}
+
+.links a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
+.faq{
+margin-top:30px;
+}
+
+footer{
+margin-top:40px;
+font-size:13px;
+text-align:center;
+color:#777;
+}
+
+footer a{
+color:#0077cc;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="back">
+<a href="../index.html">← Zurück zur Rechner-Übersicht</a>
+</div>
+
+<div class="container">
+
+<h1>🚐 Autarkie Rechner Wohnmobil</h1>
+
+<p>
+Mit diesem <strong>Autarkie Rechner für Wohnmobil und Camper</strong> kannst du berechnen,
+wie viele Tage deine Batterie ohne Nachladen ausreicht. Der Rechner berücksichtigt Batteriekapazität,
+Spannung, nutzbare Kapazität und deinen täglichen Stromverbrauch.
+</p>
+
+<p>
+Die Autarkie ist einer der wichtigsten Werte bei der Planung einer Wohnmobil-Elektrik.
+Sie zeigt, wie lange du ohne Landstrom stehen kannst. Besonders bei LiFePO₄-Batterien,
+Solaranlagen und Offgrid-Camping ist diese Berechnung hilfreich.
+</p>
+
+<h2>Autarkie berechnen</h2>
+
+<label>Batteriekapazität (Ah)</label>
+<input type="number" id="ah" placeholder="z.B. 200">
+
+<label>Batteriespannung (V)</label>
+<input type="number" id="volt" value="12">
+
+<label>Nutzbare Kapazität (%)</label>
+<input type="number" id="nutzbar" value="90">
+
+<label>Täglicher Verbrauch (Wh)</label>
+<input type="number" id="verbrauch" placeholder="z.B. 720">
+
+<button onclick="berechnen()">Autarkie berechnen</button>
+
+<div class="result" id="ergebnis">
+Bitte Werte eingeben.
+</div>
+
+<div class="info-box">
+<strong>Formel:</strong><br>
+Nutzbare Energie = Ah × Volt × Nutzbare Kapazität<br>
+Autarkie = Nutzbare Wh ÷ Tagesverbrauch
+</div>
+
+<h2>Wie viele Tage reicht die Batterie?</h2>
+
+<p>
+Die Reichweite deiner Bordbatterie hängt direkt vom täglichen Energieverbrauch ab.
+Je geringer der Verbrauch und je größer die nutzbare Batteriekapazität, desto länger
+kannst du ohne Nachladen stehen.
+</p>
+
+<p>
+Eine Solaranlage kann die Autarkie zusätzlich deutlich verlängern, indem sie tagsüber
+einen Teil des Stromverbrauchs wieder ausgleicht.
+</p>
+
+<div class="links">
+<h2>Weitere hilfreiche Rechner</h2>
+<ul>
+<li><a href="../Batterie Rechner/index.html">Batterie Rechner</a></li>
+<li><a href="../energieverbrauch-rechner/index.html">Energieverbrauch Rechner</a></li>
+<li><a href="../solarertrag-rechner/index.html">Solarertrag Rechner</a></li>
+<li><a href="../batterie-ladezeit-rechner/index.html">Batterie Ladezeit Rechner</a></li>
+<li><a href="../ah-wh-rechner/index.html">Ah ↔ Wh Rechner</a></li>
+<li><a href="../wechselrichter-rechner/index.html">Wechselrichter Rechner</a></li>
+</ul>
+</div>
+
+<div class="faq">
+
+<h2>Häufige Fragen zum Autarkie Rechner</h2>
+
+<p><strong>Wie berechne ich die Autarkie?</strong><br>
+Die nutzbare Energie der Batterie wird durch den täglichen Stromverbrauch geteilt. Das Ergebnis entspricht der möglichen Standzeit in Tagen.</p>
+
+<p><strong>Wie lange reicht eine 200Ah LiFePO4 Batterie?</strong><br>
+Bei 12V und 90 Prozent nutzbarer Kapazität stehen etwa 2160 Wh zur Verfügung. Bei 720 Wh Tagesverbrauch ergibt das ungefähr drei Tage.</p>
+
+<p><strong>Welche Entladetiefe ist sinnvoll?</strong><br>
+Bei LiFePO4 werden häufig 80 bis 90 Prozent angesetzt. AGM-Batterien werden oft nur bis etwa 50 Prozent genutzt.</p>
+
+<p><strong>Kann Solar die Autarkie erhöhen?</strong><br>
+Ja. Jeder durch Solar erzeugte Wattstunde reduziert den täglichen Batterieverbrauch und verlängert die Standzeit.</p>
+
+<p><strong>Warum wird in Wh gerechnet?</strong><br>
+Wattstunden ermöglichen einen direkten Vergleich zwischen Batterie, Verbrauchern und Solarertrag.</p>
+
+</div>
+
+<footer>
+<p>© 2026 JUBE-TECH – Rechner für Wohnmobil-Elektrik, LiFePO₄ und Solartechnik</p>
+
+<p>
+<a href="../index.html">Übersicht</a> |
+<a href="../impressum.html">Impressum</a> |
+<a href="../datenschutz.html">Datenschutz</a>
+</p>
+</footer>
+
+</div>
+
+<script>
+function berechnen(){
+
+let ah = parseFloat(document.getElementById("ah").value);
+let volt = parseFloat(document.getElementById("volt").value);
+let nutzbar = parseFloat(document.getElementById("nutzbar").value);
+let verbrauch = parseFloat(document.getElementById("verbrauch").value);
+
+if(!ah || !volt || !nutzbar || !verbrauch){
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Bitte alle Werte korrekt eingeben.";
+return;
+}
+
+let nutzbareWh = ah * volt * (nutzbar / 100);
+let tage = nutzbareWh / verbrauch;
+
+let bewertung = "";
+
+if(tage < 1)
+bewertung = "⚠️ Weniger als 1 Tag Autarkie";
+else if(tage < 3)
+bewertung = "✅ Solide Autarkie für Kurztrips";
+else if(tage < 7)
+bewertung = "✅ Gute Autarkie für längere Reisen";
+else
+bewertung = "🚐 Sehr hohe Autarkie";
+
+document.getElementById("ergebnis").innerHTML =
+"<strong>🔋 Nutzbare Energie:</strong> " + nutzbareWh.toFixed(0) + " Wh<br>" +
+"<strong>📅 Autarkie:</strong> " + tage.toFixed(1).replace('.', ',') + " Tage<br><br>" +
+"<strong>Status:</strong> " + bewertung + "<br><br>" +
+"👉 Solarertrag und Nachladen während der Fahrt können die tatsächliche Autarkie deutlich erhöhen.";
+}
+</script>
+
+</body>
+</html>
