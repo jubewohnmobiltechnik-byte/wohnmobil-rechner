@@ -4,11 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Solarertrag Rechner Wohnmobil | Jube-Tech</title>
+<title>Solarertrag Rechner Wohnmobil | Solaranlage Camper berechnen</title>
 
-<meta name="description" content="Solarertrag im Wohnmobil berechnen: Wie viel Strom liefert deine Solaranlage pro Tag? Ideal für Camper, LiFePO4 und Autarkie Planung.">
-<meta name="keywords" content="Solarertrag Rechner Wohnmobil, Solaranlage Camper, kWh Berechnung, PV Ertrag Camper, Autarkie Solar Rechner">
+<meta name="description" content="Solarertrag Rechner für Wohnmobil und Camper: Berechne den täglichen Ertrag deiner Solaranlage in Wh und kWh für Autarkie, LiFePO₄-Batterie und Offgrid-Camping.">
+<meta name="keywords" content="Solarertrag Rechner Wohnmobil, Solaranlage Wohnmobil berechnen, Camper Solar Rechner, PV Ertrag Wohnmobil, Solarleistung Camper, LiFePO4 Solar Wohnmobil">
 <meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"Wie berechne ich den Solarertrag im Wohnmobil?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Der Solarertrag wird aus Solarleistung in Wp mal Peak-Sonnenstunden berechnet. Davon werden Systemverluste durch Temperatur, Laderegler, Kabel und Verschattung abgezogen."
+}
+},
+{
+"@type":"Question",
+"name":"Wie viel bringt eine 200 Watt Solaranlage im Wohnmobil?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Eine 200 Watt Solaranlage kann im Sommer je nach Standort, Wetter und Ausrichtung ungefähr 600 bis 800 Wh pro Tag liefern."
+}
+},
+{
+"@type":"Question",
+"name":"Reicht Solar für autarkes Campen?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Ob Solar ausreicht, hängt vom Tagesverbrauch, der Batteriegröße, der Solarleistung, dem Standort und dem Wetter ab."
+}
+}
+]
+}
+</script>
 
 <style>
 body{
@@ -45,8 +78,13 @@ margin-bottom:10px;
 color:#0d6efd;
 }
 
+h2{
+margin-top:30px;
+color:#222;
+}
+
 p{
-line-height:1.5;
+line-height:1.6;
 }
 
 label{
@@ -91,6 +129,31 @@ border-radius:6px;
 font-size:16px;
 }
 
+.info-box{
+background:#f8fbff;
+border-left:5px solid #0d6efd;
+padding:15px;
+border-radius:6px;
+margin-top:20px;
+}
+
+.links{
+margin-top:30px;
+padding:15px;
+background:#f5f7fa;
+border-radius:8px;
+}
+
+.links ul{
+padding-left:20px;
+}
+
+.links a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
 .faq{
 margin-top:30px;
 }
@@ -120,8 +183,15 @@ text-decoration:none;
 <h1>☀️ Solarertrag Rechner Wohnmobil</h1>
 
 <p>
-Berechne den realistischen <strong>täglichen Solarertrag deiner Wohnmobil-Solaranlage</strong>.
-Ideal für die Planung von <strong>Autarkie, LiFePO₄-Batterien und Camper-Offgrid-Systemen</strong>.
+Mit diesem <strong>Solarertrag Rechner für Wohnmobil und Camper</strong> kannst du berechnen,
+wie viel Strom deine Solaranlage pro Tag ungefähr liefert. Der Rechner hilft dir bei der Planung
+von <strong>Autarkie, LiFePO₄-Batterie, MPPT-Laderegler und Offgrid-Camping</strong>.
+</p>
+
+<p>
+Der tatsächliche Solarertrag hängt von vielen Faktoren ab: Solarleistung in Wp, Sonnenstunden,
+Jahreszeit, Standort, Wetter, Verschattung, Einbauwinkel, Temperatur und Systemverlusten.
+Deshalb rechnet dieser Rechner mit einem einstellbaren Verlustwert, damit das Ergebnis praxisnäher wird.
 </p>
 
 <h2>Berechnung</h2>
@@ -141,18 +211,55 @@ Ideal für die Planung von <strong>Autarkie, LiFePO₄-Batterien und Camper-Offg
 Bitte Werte eingeben.
 </div>
 
+<div class="info-box">
+<strong>Formel:</strong><br>
+Brutto-Ertrag = Solarleistung in Wp × Peak-Sonnenstunden<br>
+Netto-Ertrag = Brutto-Ertrag minus Systemverluste
+</div>
+
+<h2>Warum ist der reale Solarertrag niedriger?</h2>
+
+<p>
+Eine Solaranlage auf dem Wohnmobil erreicht in der Praxis selten dauerhaft ihre Nennleistung.
+Gründe sind flacher Einbau auf dem Dach, Hitze, Wolken, Schatten durch Dachluken oder Bäume,
+Kabelverluste und Verluste im Laderegler. Für eine realistische Planung sind deshalb 20 bis 30 Prozent
+Systemverluste ein sinnvoller Richtwert.
+</p>
+
+<div class="links">
+<h2>Weitere hilfreiche Rechner</h2>
+<ul>
+<li><a href="../Batterie Rechner/index.html">Batterie und Autarkie berechnen</a></li>
+<li><a href="../MPPT Laderegler Rechner Wohnmobil/index.html">MPPT-Laderegler berechnen</a></li>
+<li><a href="../Energieverbrauch-Rechner Wohnmobil/index.html">Energieverbrauch berechnen</a></li>
+<li><a href="../AH WH Rechner/index.html">Ah in Wh umrechnen</a></li>
+<li><a href="../Kabelquerschnitt Rechner/index.html">Kabelquerschnitt berechnen</a></li>
+</ul>
+</div>
+
 <div class="faq">
 
-<h2>Häufige Fragen</h2>
+<h2>Häufige Fragen zum Solarertrag Rechner</h2>
 
-<p><strong>Wie viel bringt eine 200W Solaranlage?</strong><br>
-Je nach Standort und Jahreszeit sind im Sommer häufig etwa 600–800 Wh pro Tag möglich.</p>
+<p><strong>Wie berechne ich den Solarertrag im Wohnmobil?</strong><br>
+Du multiplizierst die Solarleistung in Wp mit den Peak-Sonnenstunden pro Tag und ziehst anschließend
+Systemverluste ab. Beispiel: 200 Wp × 4 Stunden = 800 Wh brutto.</p>
 
-<p><strong>Warum Systemverluste?</strong><br>
-MPPT-Laderegler, Temperatur, Kabelverluste, Verschattung und Einbauwinkel reduzieren den realen Ertrag.</p>
+<p><strong>Wie viel bringt eine 200 Watt Solaranlage?</strong><br>
+Eine 200 Watt Solaranlage kann im Sommer je nach Standort, Wetter und Ausrichtung ungefähr
+600 bis 800 Wh pro Tag liefern.</p>
+
+<p><strong>Welche Systemverluste sind realistisch?</strong><br>
+Für Wohnmobile sind 20 bis 30 Prozent ein sinnvoller Richtwert. Bei Verschattung, Hitze oder ungünstigem
+Einbauwinkel können die Verluste höher sein.</p>
 
 <p><strong>Reicht Solar für autarkes Campen?</strong><br>
-Das hängt von Verbrauch, Batteriegröße, Wetter, Standort und Solarmodul-Leistung ab.</p>
+Das hängt vom täglichen Stromverbrauch, der Batteriegröße, der Solarleistung und dem Wetter ab.
+Bei geringem Verbrauch kann eine Solaranlage sehr gut zur Autarkie beitragen.</p>
+
+<p><strong>Was bedeutet Wp bei Solarmodulen?</strong><br>
+Wp steht für Watt Peak. Das ist die maximale Leistung eines Solarmoduls unter genormten Testbedingungen.
+In der Praxis liegt die tatsächliche Leistung oft darunter.</p>
 
 </div>
 
@@ -196,10 +303,11 @@ else
 bewertung = "✅ Sehr guter Tagesertrag für autarkes Campen";
 
 document.getElementById("ergebnis").innerHTML =
-"<strong>☀️ Tagesertrag:</strong> " + netto.toFixed(0) + " Wh / Tag<br>" +
+"<strong>☀️ Brutto-Ertrag:</strong> " + brutto.toFixed(0) + " Wh / Tag<br>" +
+"<strong>⚡ Netto-Ertrag:</strong> " + netto.toFixed(0) + " Wh / Tag<br>" +
 "<strong>📦 kWh:</strong> " + (netto / 1000).toFixed(2).replace('.', ',') + " kWh / Tag<br><br>" +
 "<strong>Status:</strong> " + bewertung + "<br><br>" +
-"👉 Richtwert: 100W Solarleistung liefern im Sommer oft ca. 300–400 Wh pro Tag.";
+"👉 Richtwert: 100 Wp Solarleistung liefern im Sommer oft etwa 300–400 Wh pro Tag.";
 }
 </script>
 
