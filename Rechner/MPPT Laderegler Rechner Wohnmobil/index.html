@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MPPT Laderegler Rechner Wohnmobil | Jube-Tech</title>
+
+<meta name="description" content="MPPT Laderegler im Wohnmobil berechnen: richtige Ampere Größe für deine Solaranlage, 12V und 24V Systeme korrekt dimensionieren.">
+<meta name="keywords" content="MPPT Rechner Wohnmobil, Solarladeregler berechnen, MPPT Dimensionierung, Solar 12V Regler, Camper Solar System">
+<meta name="robots" content="index, follow">
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:20px;
+color:#222;
+}
+
+.back{
+max-width:780px;
+margin:0 auto 15px auto;
+}
+
+.back a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+max-width:780px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:26px;
+margin-bottom:10px;
+color:#0d6efd;
+}
+
+p{
+line-height:1.5;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:18px;
+background:#0077cc;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#005fa3;
+}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#eef7ff;
+border-left:5px solid #0077cc;
+border-radius:6px;
+font-size:16px;
+}
+
+.faq{
+margin-top:30px;
+}
+
+footer{
+margin-top:40px;
+font-size:13px;
+text-align:center;
+color:#777;
+}
+
+footer a{
+color:#0077cc;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="back">
+<a href="../index.html">← Zurück zur Rechner-Übersicht</a>
+</div>
+
+<div class="container">
+
+<h1>☀️ MPPT Laderegler Rechner Wohnmobil</h1>
+
+<p>
+Berechne die passende Größe deines <strong>MPPT-Solarladereglers</strong>.
+Wichtig für eine sichere und effiziente Nutzung deiner Solaranlage im Wohnmobil.
+</p>
+
+<h2>Berechnung</h2>
+
+<label>Solarleistung gesamt (Wp)</label>
+<input type="number" id="wp" placeholder="z.B. 400">
+
+<label>Batteriespannung (Volt)</label>
+<input type="number" id="spannung" value="12">
+
+<label>Sicherheitsreserve (%)</label>
+<input type="number" id="reserve" value="25">
+
+<button onclick="berechnen()">MPPT berechnen</button>
+
+<div class="result" id="ergebnis">
+Bitte Werte eingeben.
+</div>
+
+<div class="faq">
+
+<h2>Häufige Fragen</h2>
+
+<p><strong>Warum brauche ich Reserve?</strong><br>
+Reserve schützt vor Lastspitzen, ungünstigen Bedingungen und späteren Erweiterungen der Solaranlage.</p>
+
+<p><strong>12V oder 24V System?</strong><br>
+Bei 24V fließt bei gleicher Solarleistung weniger Strom. Dadurch kann der Laderegler oft kleiner dimensioniert werden.</p>
+
+<p><strong>Was passiert bei zu kleinem MPPT?</strong><br>
+Ein zu kleiner MPPT-Laderegler begrenzt die Leistung, kann stark belastet werden oder überhitzen.</p>
+
+</div>
+
+<footer>
+<p>© 2026 JUBE-TECH – Rechner für Wohnmobil-Elektrik, LiFePO₄ und Solartechnik</p>
+
+<p>
+<a href="../index.html">Übersicht</a> |
+<a href="../impressum.html">Impressum</a> |
+<a href="../datenschutz.html">Datenschutz</a>
+</p>
+</footer>
+
+</div>
+
+<script>
+function berechnen() {
+
+let wp = parseFloat(document.getElementById("wp").value);
+let v = parseFloat(document.getElementById("spannung").value);
+let reserve = parseFloat(document.getElementById("reserve").value);
+
+if (!wp || !v) {
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Bitte alle Pflichtwerte korrekt eingeben.";
+return;
+}
+
+if (!reserve) reserve = 0;
+
+let strom = wp / v;
+let mppt = strom * (1 + reserve / 100);
+
+let empfehlung = "";
+
+if (mppt <= 20)
+empfehlung = "20A MPPT";
+else if (mppt <= 30)
+empfehlung = "30A MPPT";
+else if (mppt <= 50)
+empfehlung = "50A MPPT";
+else if (mppt <= 70)
+empfehlung = "70A MPPT";
+else if (mppt <= 100)
+empfehlung = "100A MPPT";
+else
+empfehlung = "150A oder größer";
+
+document.getElementById("ergebnis").innerHTML =
+"<strong>☀️ Empfohlener MPPT:</strong> " + empfehlung + "<br><br>" +
+"📊 Berechneter Strom inkl. Reserve: " + mppt.toFixed(1).replace('.', ',') + " A<br><br>" +
+"👉 Tipp: Lieber eine Stufe größer wählen, besonders bei Winterbetrieb oder geplanter Erweiterung.";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Spannungsabfall Rechner Wohnmobil | Jube-Tech</title>
+
+<meta name="description" content="Spannungsabfall im Wohnmobil berechnen: Prüfe Kabelverluste bei 12V und 24V Systemen und vermeide Leistungseinbußen im Camper Ausbau.">
+<meta name="keywords" content="Spannungsabfall Rechner, Wohnmobil Kabelverlust, 12V Spannung berechnen, Kabeldimensionierung Camper, LiFePO4 Installation">
+<meta name="robots" content="index, follow">
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:20px;
+color:#222;
+}
+
+.back{
+max-width:780px;
+margin:0 auto 15px auto;
+}
+
+.back a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+max-width:780px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:26px;
+margin-bottom:10px;
+color:#0d6efd;
+}
+
+p{
+line-height:1.5;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:18px;
+background:#0077cc;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#005fa3;
+}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#eef7ff;
+border-left:5px solid #0077cc;
+border-radius:6px;
+font-size:16px;
+}
+
+.faq{
+margin-top:30px;
+}
+
+footer{
+margin-top:40px;
+font-size:13px;
+text-align:center;
+color:#777;
+}
+
+footer a{
+color:#0077cc;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="back">
+<a href="../index.html">← Zurück zur Rechner-Übersicht</a>
+</div>
+
+<div class="container">
+
+<h1>⚡ Spannungsabfall Rechner Wohnmobil</h1>
+
+<p>
+Berechne den <strong>Spannungsabfall deiner 12V- oder 24V-Verkabelung</strong>.
+Wichtig für effiziente Wohnmobil-Elektrik, sichere Installation und zuverlässige Verbraucher.
+</p>
+
+<h2>Berechnung</h2>
+
+<label>Strom (Ampere)</label>
+<input type="number" id="strom" placeholder="z.B. 20">
+
+<label>Kabellänge einfach (Meter)</label>
+<input type="number" id="laenge" placeholder="z.B. 5">
+
+<label>Kabelquerschnitt (mm²)</label>
+<input type="number" id="querschnitt" placeholder="z.B. 10">
+
+<label>Systemspannung (Volt)</label>
+<input type="number" id="spannung" value="12">
+
+<button onclick="berechnen()">Spannungsabfall berechnen</button>
+
+<div class="result" id="ergebnis">
+Bitte Werte eingeben.
+</div>
+
+<div class="faq">
+
+<h2>Häufige Fragen</h2>
+
+<p><strong>Wie viel Spannungsabfall ist in Ordnung?</strong><br>
+Im Wohnmobil sollten idealerweise unter 3% eingehalten werden.</p>
+
+<p><strong>Warum ist Spannungsabfall ein Problem?</strong><br>
+Verbraucher laufen ineffizient, Akkus laden schlechter oder Geräte schalten zu früh ab.</p>
+
+<p><strong>Was hilft gegen Spannungsverlust?</strong><br>
+Dickeres Kabel, kürzere Leitungswege oder ein 24V-System reduzieren den Spannungsabfall.</p>
+
+</div>
+
+<footer>
+<p>© 2026 JUBE-TECH – Rechner für Wohnmobil-Elektrik, LiFePO₄ und Solartechnik</p>
+
+<p>
+<a href="../index.html">Übersicht</a> |
+<a href="../impressum.html">Impressum</a> |
+<a href="../datenschutz.html">Datenschutz</a>
+</p>
+</footer>
+
+</div>
+
+<script>
+function berechnen() {
+
+let strom = parseFloat(document.getElementById("strom").value);
+let laenge = parseFloat(document.getElementById("laenge").value);
+let q = parseFloat(document.getElementById("querschnitt").value);
+let v = parseFloat(document.getElementById("spannung").value);
+
+if (!strom || !laenge || !q || !v) {
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Bitte alle Werte korrekt eingeben.";
+return;
+}
+
+// Kupfer Widerstand vereinfacht
+let resistanz = 0.0175;
+
+let spannungsverlust = (2 * laenge * strom * resistanz) / q;
+let prozent = (spannungsverlust / v) * 100;
+
+let status = "";
+
+if (prozent < 3)
+status = "✅ Sehr gut – optimal";
+else if (prozent < 5)
+status = "⚠️ Akzeptabel – aber nicht ideal";
+else
+status = "❌ Zu hoch – Kabel zu dünn oder Leitung zu lang";
+
+document.getElementById("ergebnis").innerHTML =
+"<strong>⚡ Spannungsabfall:</strong> " + spannungsverlust.toFixed(2).replace('.', ',') + " V<br>" +
+"<strong>📉 Verlust:</strong> " + prozent.toFixed(1).replace('.', ',') + " %<br><br>" +
+"<strong>Status:</strong> " + status + "<br><br>" +
+"👉 Empfehlung: Für Wohnmobil-Systeme möglichst unter 3% bleiben.";
+}
+</script>
+
+</body>
+</html>

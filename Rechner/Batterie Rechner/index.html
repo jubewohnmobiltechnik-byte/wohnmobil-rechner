@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Batterie Rechner Wohnmobil | Jube-Tech</title>
+
+<meta name="description" content="Wohnmobil Batterie Rechner: Berechne Autarkie, Batterielaufzeit und realistische Nutzungsdauer basierend auf Verbrauch, Spannung und Kapazität. Ideal für LiFePO4 und AGM Systeme.">
+<meta name="keywords" content="Wohnmobil Batterie Rechner, Autarkie Rechner, LiFePO4 Berechnung, Batterie Laufzeit Wohnmobil, Ah in Wh Rechner, Stromverbrauch Camper">
+<meta name="robots" content="index, follow">
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:20px;
+color:#222;
+}
+
+.back{
+max-width:750px;
+margin:0 auto 15px auto;
+}
+
+.back a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+max-width:750px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:26px;
+margin-bottom:10px;
+color:#0d6efd;
+}
+
+p{
+line-height:1.5;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:18px;
+background:#0077cc;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#005fa3;
+}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#eef7ff;
+border-left:5px solid #0077cc;
+border-radius:6px;
+font-size:16px;
+}
+
+.small{
+font-size:13px;
+color:#666;
+margin-top:10px;
+}
+
+.faq{
+margin-top:30px;
+}
+
+.faq h2{
+font-size:20px;
+margin-bottom:10px;
+}
+
+footer{
+margin-top:40px;
+font-size:13px;
+text-align:center;
+color:#777;
+}
+
+footer a{
+color:#0077cc;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="back">
+<a href="../index.html">← Zurück zur Rechner-Übersicht</a>
+</div>
+
+<div class="container">
+
+<h1>🔋 Batterie Rechner Wohnmobil</h1>
+
+<p>
+Berechne die <strong>realistische Autarkie deines Wohnmobils</strong> auf Basis von Verbrauch, Batteriespannung und Kapazität.
+Ideal für <strong>LiFePO₄</strong> und AGM Systeme im Camper-Ausbau.
+</p>
+
+<h2>Berechnung</h2>
+
+<label>Verbrauch pro Tag (Wh)</label>
+<input type="number" id="verbrauch" placeholder="z.B. 1200">
+
+<label>Batteriespannung (V)</label>
+<input type="number" id="spannung" value="12">
+
+<label>Batteriekapazität (Ah)</label>
+<input type="number" id="kapazitaet" placeholder="z.B. 200">
+
+<button onclick="berechnen()">Autarkie berechnen</button>
+
+<div class="result" id="ergebnis">
+Bitte Werte eingeben und berechnen.
+</div>
+
+<div class="small">
+Hinweis: LiFePO₄ Batterien können deutlich tiefer entladen werden als AGM Batterien.
+</div>
+
+<div class="faq">
+
+<h2>Häufige Fragen</h2>
+
+<p><strong>Wie realistisch ist das Ergebnis?</strong><br>
+Das Ergebnis basiert auf idealen Bedingungen. Verluste durch Wechselrichter, Temperatur und Leitungen können die Laufzeit reduzieren.</p>
+
+<p><strong>Warum ist meine Autarkie so niedrig?</strong><br>
+Meist liegt es an hohen Verbrauchern wie Kaffeemaschine, Wechselrichter, Kühlschrank oder Heizung.</p>
+
+<p><strong>Welche Batterie ist besser?</strong><br>
+LiFePO₄ Batterien bieten mehr nutzbare Kapazität, längere Lebensdauer und geringeres Gewicht.</p>
+
+</div>
+
+<footer>
+<p>© 2026 JUBE-TECH – Rechner für Wohnmobil-Elektrik, LiFePO₄ und Solartechnik</p>
+
+<p>
+<a href="../index.html">Übersicht</a> |
+<a href="../impressum.html">Impressum</a> |
+<a href="../datenschutz.html">Datenschutz</a>
+</p>
+</footer>
+
+</div>
+
+<script>
+function berechnen() {
+
+let verbrauch = parseFloat(document.getElementById("verbrauch").value);
+let spannung = parseFloat(document.getElementById("spannung").value);
+let kapazitaet = parseFloat(document.getElementById("kapazitaet").value);
+
+if (!verbrauch || !spannung || !kapazitaet) {
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Bitte alle Werte korrekt eingeben.";
+return;
+}
+
+let batterieWh = kapazitaet * spannung;
+
+// Nutzbare Energie (ca. 85%)
+let nutzbar = batterieWh * 0.85;
+
+// Theoretische Tage
+let tage = nutzbar / verbrauch;
+
+// Praxisabschlag
+let real = tage * 0.9;
+
+document.getElementById("ergebnis").innerHTML =
+"<strong>🔋 Theoretische Autarkie:</strong> " + tage.toFixed(1) + " Tage<br>" +
+"<strong>⚡ Realistische Autarkie:</strong> " + real.toFixed(1) + " Tage<br><br>" +
+"👉 Empfehlung: Unter 2 Tagen → Batteriekapazität erhöhen oder Verbrauch reduzieren.";
+}
+</script>
+
+</body>
+</html>

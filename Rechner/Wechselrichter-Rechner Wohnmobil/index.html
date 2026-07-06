@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wechselrichter Rechner Wohnmobil | Jube-Tech</title>
+
+<meta name="description" content="Wechselrichter im Wohnmobil berechnen: richtige Leistung (Watt), Spitzenlast und Dimensionierung für 12V und 24V Systeme.">
+<meta name="keywords" content="Wechselrichter Rechner Wohnmobil, Inverter Dimensionierung, 12V 230V Wechselrichter, Watt berechnen Camper, Spitzenlast Strom">
+<meta name="robots" content="index, follow">
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:20px;
+color:#222;
+}
+
+.back{
+max-width:780px;
+margin:0 auto 15px auto;
+}
+
+.back a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+max-width:780px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:26px;
+margin-bottom:10px;
+color:#0d6efd;
+}
+
+p{
+line-height:1.5;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:18px;
+background:#0077cc;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#005fa3;
+}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#eef7ff;
+border-left:5px solid #0077cc;
+border-radius:6px;
+font-size:16px;
+}
+
+.faq{
+margin-top:30px;
+}
+
+footer{
+margin-top:40px;
+font-size:13px;
+text-align:center;
+color:#777;
+}
+
+footer a{
+color:#0077cc;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="back">
+<a href="../index.html">← Zurück zur Rechner-Übersicht</a>
+</div>
+
+<div class="container">
+
+<h1>🔌 Wechselrichter Rechner Wohnmobil</h1>
+
+<p>
+Berechne die <strong>richtige Wechselrichtergröße für dein Wohnmobil</strong>.
+Wichtig für Kaffeemaschine, Föhn, Laptop und andere 230V-Verbraucher.
+</p>
+
+<h2>Berechnung</h2>
+
+<label>Dauerleistung aller Geräte (Watt)</label>
+<input type="number" id="dauer" placeholder="z.B. 800">
+
+<label>Spitzenlast zusätzlich (Watt)</label>
+<input type="number" id="spitze" placeholder="z.B. 1000">
+
+<label>Sicherheitsreserve (%)</label>
+<input type="number" id="reserve" value="25">
+
+<button onclick="berechnen()">Wechselrichter berechnen</button>
+
+<div class="result" id="ergebnis">
+Bitte Werte eingeben.
+</div>
+
+<div class="faq">
+
+<h2>Häufige Fragen</h2>
+
+<p><strong>Warum brauche ich Reserve?</strong><br>
+Viele Geräte haben hohe Einschaltströme. Eine Reserve schützt vor Überlastung und Abschaltungen.</p>
+
+<p><strong>Reicht ein 1000W Wechselrichter?</strong><br>
+Für kleine Verbraucher wie Laptop, Ladegeräte oder kleine Küchengeräte oft ja. Für Föhn, Kaffeemaschine oder Wasserkocher meist nicht.</p>
+
+<p><strong>Ist 12V oder 24V besser?</strong><br>
+Bei höheren Leistungen ist 24V oft effizienter, weil weniger Strom fließt und Kabelverluste geringer sind.</p>
+
+</div>
+
+<footer>
+<p>© 2026 JUBE-TECH – Rechner für Wohnmobil-Elektrik, LiFePO₄ und Solartechnik</p>
+
+<p>
+<a href="../index.html">Übersicht</a> |
+<a href="../impressum.html">Impressum</a> |
+<a href="../datenschutz.html">Datenschutz</a>
+</p>
+</footer>
+
+</div>
+
+<script>
+function berechnen() {
+
+let dauer = parseFloat(document.getElementById("dauer").value);
+let spitze = parseFloat(document.getElementById("spitze").value);
+let reserve = parseFloat(document.getElementById("reserve").value);
+
+if (!dauer || !spitze) {
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Bitte alle Pflichtwerte korrekt eingeben.";
+return;
+}
+
+if (!reserve) reserve = 0;
+
+let gesamt = dauer + spitze;
+let mitReserve = gesamt * (1 + reserve / 100);
+
+let empfehlung = "";
+
+if (mitReserve <= 500)
+empfehlung = "500W";
+else if (mitReserve <= 1000)
+empfehlung = "1000W";
+else if (mitReserve <= 1500)
+empfehlung = "1500W";
+else if (mitReserve <= 2000)
+empfehlung = "2000W";
+else if (mitReserve <= 3000)
+empfehlung = "3000W";
+else
+empfehlung = "4000W oder größer";
+
+document.getElementById("ergebnis").innerHTML =
+"<strong>🔌 Empfohlener Wechselrichter:</strong> " + empfehlung + "<br><br>" +
+"📊 Berechnete Last inkl. Reserve: " + mitReserve.toFixed(0) + " W<br><br>" +
+"👉 Tipp: Immer 20–30% Reserve für Einschaltströme und Spitzenlasten einplanen.";
+}
+</script>
+
+</body>
+</html>

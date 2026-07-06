@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ah ↔ Wh Umrechner Wohnmobil | Jube-Tech</title>
+
+<meta name="description" content="Ah in Wh umrechnen im Wohnmobil: einfacher Batterie-Rechner für LiFePO4, AGM und Solarsysteme. Berechne schnell Kapazität, Energie und Verbrauch.">
+<meta name="keywords" content="Ah Wh Rechner, Wohnmobil Batterie Umrechner, Ah in Wh, Wh in Ah, LiFePO4 Berechnung, Solar Batterie Rechner Camper">
+<meta name="robots" content="index, follow">
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:20px;
+color:#222;
+}
+
+.back{
+max-width:750px;
+margin:0 auto 15px auto;
+}
+
+.back a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+max-width:750px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:26px;
+margin-bottom:10px;
+color:#0d6efd;
+}
+
+p{
+line-height:1.5;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:18px;
+background:#0077cc;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#005fa3;
+}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#eef7ff;
+border-left:5px solid #0077cc;
+border-radius:6px;
+font-size:16px;
+}
+
+.faq{
+margin-top:30px;
+}
+
+.faq h2{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.small{
+font-size:13px;
+color:#666;
+margin-top:10px;
+}
+
+footer{
+margin-top:40px;
+font-size:13px;
+text-align:center;
+color:#777;
+}
+
+footer a{
+color:#0077cc;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="back">
+<a href="../index.html">← Zurück zur Rechner-Übersicht</a>
+</div>
+
+<div class="container">
+
+<h1>🔋 Ah ↔ Wh Umrechner Wohnmobil</h1>
+
+<p>
+Der wichtigste Umrechner für <strong>Batterie, Solar und Autarkie im Wohnmobil</strong>.
+Rechne schnell zwischen <strong>Amperestunden (Ah)</strong> und <strong>Wattstunden (Wh)</strong> um.
+</p>
+
+<h2>Umrechnung</h2>
+
+<label>Spannung (V)</label>
+<input type="number" id="spannung" value="12" placeholder="z.B. 12 oder 24">
+
+<label>Amperestunden (Ah)</label>
+<input type="number" id="ah" placeholder="z.B. 200">
+
+<label>Wattstunden (Wh)</label>
+<input type="number" id="wh" placeholder="z.B. 2400">
+
+<button onclick="berechnen()">Umrechnen</button>
+
+<div class="result" id="ergebnis">
+Bitte Werte eingeben.
+</div>
+
+<div class="small">
+Hinweis: Immer nur EINEN Wert (Ah oder Wh) ausfüllen, der andere wird berechnet.
+</div>
+
+<div class="faq">
+
+<h2>Häufige Fragen</h2>
+
+<p><strong>Wie rechne ich Ah in Wh um?</strong><br>
+Ah × Volt = Wh</p>
+
+<p><strong>Wie rechne ich Wh in Ah um?</strong><br>
+Wh ÷ Volt = Ah</p>
+
+<p><strong>Warum ist die Spannung wichtig?</strong><br>
+Weil 12V, 24V und 48V Systeme komplett unterschiedliche Energiemengen ergeben.</p>
+
+</div>
+
+<footer>
+<p>© 2026 JUBE-TECH – Rechner für Wohnmobil-Elektrik, LiFePO₄ und Solartechnik</p>
+
+<p>
+<a href="../index.html">Übersicht</a> |
+<a href="../impressum.html">Impressum</a> |
+<a href="../datenschutz.html">Datenschutz</a>
+</p>
+</footer>
+
+</div>
+
+<script>
+function berechnen() {
+
+let v = parseFloat(document.getElementById("spannung").value);
+let ah = parseFloat(document.getElementById("ah").value);
+let wh = parseFloat(document.getElementById("wh").value);
+
+if (!v) {
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Bitte Spannung eingeben.";
+return;
+}
+
+if (ah && !wh) {
+let resultWh = ah * v;
+
+document.getElementById("ergebnis").innerHTML =
+"<strong>🔋 Ergebnis:</strong><br>" +
+ah + " Ah = " + resultWh.toFixed(1) + " Wh bei " + v + "V<br><br>" +
+"👉 Diese Energie steht deinem Wohnmobil-System theoretisch zur Verfügung.<br><br>" +
+"🔧 Passende Batterien findest du im JUBE-TECH Shop.";
+return;
+}
+
+if (wh && !ah) {
+let resultAh = wh / v;
+
+document.getElementById("ergebnis").innerHTML =
+"<strong>🔋 Ergebnis:</strong><br>" +
+wh + " Wh = " + resultAh.toFixed(1) + " Ah bei " + v + "V<br><br>" +
+"👉 Das hilft dir bei der Dimensionierung deiner Batterie.<br><br>" +
+"🔧 Passende Systeme findest du im JUBE-TECH Shop.";
+return;
+}
+
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Bitte nur Ah ODER Wh eingeben (nicht beides gleichzeitig).";
+}
+</script>
+
+</body>
+</html>
