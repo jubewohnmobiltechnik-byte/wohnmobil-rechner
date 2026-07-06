@@ -4,11 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Energieverbrauch Rechner Wohnmobil | Jube-Tech</title>
+<title>Energieverbrauch Rechner Wohnmobil | Stromverbrauch Camper berechnen</title>
 
-<meta name="description" content="Wohnmobil Energieverbrauch berechnen: Ermittele deinen täglichen Strombedarf für Batterie, Solar und Autarkie Planung.">
-<meta name="keywords" content="Stromverbrauch Wohnmobil Rechner, Camper Energiebedarf, 12V Verbrauch berechnen, Autarkie Planung, LiFePO4 Verbrauch">
+<meta name="description" content="Energieverbrauch Rechner für Wohnmobil und Camper: Berechne deinen täglichen Stromverbrauch in Wh, kWh und Ah für Batterie, Solar und Autarkie.">
+<meta name="keywords" content="Energieverbrauch Rechner Wohnmobil, Stromverbrauch Wohnmobil berechnen, Camper Stromverbrauch, Wohnmobil Energiebedarf, Autarkie Rechner Camper">
 <meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"Wie berechne ich den Stromverbrauch im Wohnmobil?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Der Stromverbrauch wird aus der Summe aller Verbraucher pro Tag berechnet. Dafür multipliziert man Leistung in Watt mit Nutzungsdauer in Stunden oder addiert direkt bekannte Wh-Werte."
+}
+},
+{
+"@type":"Question",
+"name":"Wie viel Strom verbraucht ein Wohnmobil pro Tag?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Viele Wohnmobile verbrauchen je nach Ausstattung etwa 800 bis 2000 Wh pro Tag. Kühlschrank, Heizung, Laptop, Beleuchtung und Wechselrichter beeinflussen den Verbrauch stark."
+}
+},
+{
+"@type":"Question",
+"name":"Warum ist der Energieverbrauch wichtig?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Der tägliche Energieverbrauch bestimmt, wie groß Batterie, Solaranlage und Ladetechnik für autarkes Campen dimensioniert werden sollten."
+}
+},
+{
+"@type":"Question",
+"name":"Wie rechne ich Wh in Ah um?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Amperestunden berechnest du, indem du Wattstunden durch die Batteriespannung teilst. Bei 12 Volt entsprechen 1200 Wh etwa 100 Ah."
+}
+}
+]
+}
+</script>
 
 <style>
 body{
@@ -45,8 +86,13 @@ margin-bottom:10px;
 color:#0d6efd;
 }
 
+h2{
+margin-top:30px;
+color:#222;
+}
+
 p{
-line-height:1.5;
+line-height:1.6;
 }
 
 label{
@@ -91,6 +137,31 @@ border-radius:6px;
 font-size:16px;
 }
 
+.info-box{
+background:#f8fbff;
+border-left:5px solid #0d6efd;
+padding:15px;
+border-radius:6px;
+margin-top:20px;
+}
+
+.links{
+margin-top:30px;
+padding:15px;
+background:#f5f7fa;
+border-radius:8px;
+}
+
+.links ul{
+padding-left:20px;
+}
+
+.links a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
 .faq{
 margin-top:30px;
 }
@@ -120,8 +191,16 @@ text-decoration:none;
 <h1>📊 Energieverbrauch Rechner Wohnmobil</h1>
 
 <p>
-Berechne deinen <strong>täglichen Stromverbrauch im Wohnmobil</strong>.
-Die Grundlage für Batterie-, Solar- und Autarkieplanung.
+Mit diesem <strong>Energieverbrauch Rechner für Wohnmobil und Camper</strong> kannst du deinen
+täglichen Stromverbrauch berechnen. Das Ergebnis ist die wichtigste Grundlage für die Planung von
+<strong>LiFePO₄-Batterie, Solaranlage, MPPT-Laderegler und autarkem Camping</strong>.
+</p>
+
+<p>
+Gerade im Wohnmobil unterschätzt man den Stromverbrauch schnell. Kühlschrank, Licht, Heizung,
+Wasserpumpe, Laptop, Handy, Router, Wechselrichter und Ladegeräte verbrauchen über den Tag verteilt
+mehr Energie, als man zunächst denkt. Deshalb ist eine realistische Berechnung sinnvoll, bevor Batterie
+und Solaranlage dimensioniert werden.
 </p>
 
 <h2>Verbrauch eingeben</h2>
@@ -132,13 +211,16 @@ Die Grundlage für Batterie-, Solar- und Autarkieplanung.
 <label>Kühlschrank (Wh pro Tag)</label>
 <input type="number" id="kuehlschrank" placeholder="z.B. 600">
 
-<label>Elektronik (Laptop, Handy usw.) (Wh)</label>
-<input type="number" id="elektronik" placeholder="z.B. 200">
+<label>Elektronik: Laptop, Handy, Router usw. (Wh pro Tag)</label>
+<input type="number" id="elektronik" placeholder="z.B. 250">
 
-<label>Heizung / Boiler (Wh)</label>
+<label>Heizung / Boiler / Lüfter (Wh pro Tag)</label>
 <input type="number" id="heizung" placeholder="z.B. 300">
 
-<label>Sonstiges (Wh)</label>
+<label>Wasserpumpe / Kleingeräte (Wh pro Tag)</label>
+<input type="number" id="pumpe" placeholder="z.B. 80">
+
+<label>Sonstiges (Wh pro Tag)</label>
 <input type="number" id="sonstiges" placeholder="z.B. 100">
 
 <button onclick="berechnen()">Verbrauch berechnen</button>
@@ -147,18 +229,60 @@ Die Grundlage für Batterie-, Solar- und Autarkieplanung.
 Bitte Werte eingeben.
 </div>
 
+<div class="info-box">
+<strong>Formel:</strong><br>
+Tagesverbrauch = Summe aller Verbraucher in Wh pro Tag<br>
+Ah bei 12V = Wh ÷ 12<br>
+Ah bei 24V = Wh ÷ 24
+</div>
+
+<h2>Warum ist der Stromverbrauch im Wohnmobil so wichtig?</h2>
+
+<p>
+Der tägliche Energiebedarf entscheidet, wie lange du ohne Landstrom stehen kannst. Wenn du deinen
+Verbrauch kennst, kannst du besser einschätzen, welche Batteriekapazität nötig ist und ob deine
+Solaranlage den Verbrauch täglich wieder ausgleichen kann.
+</p>
+
+<p>
+Für autarkes Campen ist nicht nur die Batteriegröße entscheidend. Auch der tägliche Solarertrag,
+das Wetter, die Jahreszeit und die Nutzung von 230V-Geräten über einen Wechselrichter spielen eine
+wichtige Rolle. Dieser Rechner liefert dir deshalb einen praktischen Ausgangswert für die weitere Planung.
+</p>
+
+<div class="links">
+<h2>Weitere hilfreiche Rechner</h2>
+<ul>
+<li><a href="../Batterie Rechner/index.html">Batterie und Autarkie berechnen</a></li>
+<li><a href="../solarertrag-rechner/index.html">Solarertrag berechnen</a></li>
+<li><a href="../mppt-laderegler-rechner/index.html">MPPT-Laderegler berechnen</a></li>
+<li><a href="../AH WH Rechner/index.html">Ah in Wh umrechnen</a></li>
+<li><a href="../Kabelquerschnitt Rechner/index.html">Kabelquerschnitt berechnen</a></li>
+</ul>
+</div>
+
 <div class="faq">
 
-<h2>Häufige Fragen</h2>
+<h2>Häufige Fragen zum Energieverbrauch Rechner</h2>
 
-<p><strong>Was ist der größte Stromverbraucher?</strong><br>
-In den meisten Wohnmobilen sind Kühlschrank, Heizung und Wechselrichter die größten Verbraucher.</p>
+<p><strong>Wie berechne ich den Stromverbrauch im Wohnmobil?</strong><br>
+Du addierst den Tagesverbrauch aller Geräte. Wenn du nur die Leistung in Watt kennst, multiplizierst du
+Watt mit der täglichen Nutzungsdauer in Stunden.</p>
 
-<p><strong>Warum ist der Verbrauch so wichtig?</strong><br>
-Er bestimmt direkt die benötigte Batteriekapazität und die Größe deiner Solaranlage.</p>
+<p><strong>Wie viel Strom verbraucht ein Wohnmobil pro Tag?</strong><br>
+Ein sparsames Wohnmobil liegt oft unter 1000 Wh pro Tag. Mit Kühlschrank, Heizung, Laptop und mehreren
+Ladegeräten sind 1000 bis 2000 Wh pro Tag realistisch.</p>
 
-<p><strong>Wie kann ich Strom sparen?</strong><br>
-LED-Beleuchtung, effiziente Kühlschränke und weniger 230V-Verbrauch senken den Energiebedarf deutlich.</p>
+<p><strong>Was sind die größten Verbraucher im Camper?</strong><br>
+Häufig zählen Kühlschrank, Heizung, Boiler, Wechselrichter, Kaffeemaschine, Laptop und elektrische
+Kochgeräte zu den größten Verbrauchern.</p>
+
+<p><strong>Wie viel Ah sind 1200 Wh bei 12V?</strong><br>
+1200 Wh geteilt durch 12 Volt ergeben 100 Ah. Bei 24 Volt wären es 50 Ah.</p>
+
+<p><strong>Wie kann ich im Wohnmobil Strom sparen?</strong><br>
+LED-Beleuchtung, ein effizienter Kühlschrank, kurze Wechselrichter-Nutzung und stromsparende Ladegeräte
+können den Tagesverbrauch deutlich senken.</p>
 
 </div>
 
@@ -181,23 +305,37 @@ let licht = parseFloat(document.getElementById("licht").value) || 0;
 let kuehlschrank = parseFloat(document.getElementById("kuehlschrank").value) || 0;
 let elektronik = parseFloat(document.getElementById("elektronik").value) || 0;
 let heizung = parseFloat(document.getElementById("heizung").value) || 0;
+let pumpe = parseFloat(document.getElementById("pumpe").value) || 0;
 let sonstiges = parseFloat(document.getElementById("sonstiges").value) || 0;
 
-let gesamt = licht + kuehlschrank + elektronik + heizung + sonstiges;
+let gesamt = licht + kuehlschrank + elektronik + heizung + pumpe + sonstiges;
+
+if (gesamt <= 0) {
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Bitte mindestens einen Verbrauchswert eingeben.";
+return;
+}
+
+let ah12 = gesamt / 12;
+let ah24 = gesamt / 24;
+let kwh = gesamt / 1000;
 
 let bewertung = "";
 
 if (gesamt < 1000)
-bewertung = "✅ Sehr effizienter Verbrauch";
+bewertung = "✅ Sehr effizienter Verbrauch – gut für autarkes Campen";
 else if (gesamt < 2000)
-bewertung = "⚠️ Normaler Camper-Verbrauch";
+bewertung = "⚠️ Normaler Camper-Verbrauch – Batterie und Solar passend planen";
 else
-bewertung = "❌ Hoher Verbrauch – Optimierung empfohlen";
+bewertung = "❌ Hoher Verbrauch – größere Batterie und Solaranlage empfohlen";
 
 document.getElementById("ergebnis").innerHTML =
-"<strong>📊 Gesamtverbrauch:</strong> " + gesamt.toFixed(0) + " Wh / Tag<br><br>" +
+"<strong>📊 Gesamtverbrauch:</strong> " + gesamt.toFixed(0) + " Wh / Tag<br>" +
+"<strong>📦 In kWh:</strong> " + kwh.toFixed(2).replace('.', ',') + " kWh / Tag<br><br>" +
+"<strong>🔋 Entspricht bei 12V:</strong> " + ah12.toFixed(1).replace('.', ',') + " Ah / Tag<br>" +
+"<strong>🔋 Entspricht bei 24V:</strong> " + ah24.toFixed(1).replace('.', ',') + " Ah / Tag<br><br>" +
 "<strong>Status:</strong> " + bewertung + "<br><br>" +
-"👉 Dieser Wert ist die Grundlage für die Auslegung deiner Batterie und Solaranlage.";
+"👉 Dieser Wert ist die Grundlage für Batteriegröße, Solarleistung und Autarkieplanung.";
 }
 </script>
 
