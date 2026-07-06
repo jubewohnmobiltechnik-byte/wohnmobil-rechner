@@ -4,11 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MPPT Laderegler Rechner Wohnmobil | Jube-Tech</title>
+<title>MPPT Laderegler Rechner Wohnmobil | Solarladeregler berechnen</title>
 
-<meta name="description" content="MPPT Laderegler im Wohnmobil berechnen: richtige Ampere Größe für deine Solaranlage, 12V und 24V Systeme korrekt dimensionieren.">
-<meta name="keywords" content="MPPT Rechner Wohnmobil, Solarladeregler berechnen, MPPT Dimensionierung, Solar 12V Regler, Camper Solar System">
+<meta name="description" content="MPPT Laderegler Rechner für Wohnmobil und Camper: Berechne die passende Ampere-Größe für deinen Solarladeregler bei 12V und 24V Solaranlagen.">
+<meta name="keywords" content="MPPT Laderegler Rechner Wohnmobil, Solarladeregler berechnen, MPPT Dimensionierung Camper, Solarregler 12V berechnen, MPPT 24V Wohnmobil">
 <meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"Wie berechne ich die Größe eines MPPT Ladereglers?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Die benötigte Stromstärke berechnest du aus Solarleistung in Watt geteilt durch Batteriespannung in Volt. Zusätzlich sollte eine Sicherheitsreserve eingeplant werden."
+}
+},
+{
+"@type":"Question",
+"name":"Welche MPPT Größe brauche ich für 400 Watt Solar am Wohnmobil?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Bei 400 Watt Solar an einem 12 Volt System entstehen rechnerisch etwa 33 Ampere. Mit Reserve ist meist ein 50A MPPT Laderegler sinnvoll."
+}
+},
+{
+"@type":"Question",
+"name":"Warum ist ein zu kleiner MPPT Laderegler problematisch?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Ein zu kleiner MPPT Laderegler kann die Solarleistung begrenzen, dauerhaft stark belastet werden oder im ungünstigen Fall überhitzen."
+}
+},
+{
+"@type":"Question",
+"name":"Ist bei 24 Volt ein kleinerer MPPT Laderegler möglich?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Ja. Bei 24 Volt fließt bei gleicher Solarleistung nur etwa halb so viel Strom wie bei 12 Volt. Dadurch kann der Laderegler oft kleiner dimensioniert werden."
+}
+}
+]
+}
+</script>
 
 <style>
 body{
@@ -45,8 +86,13 @@ margin-bottom:10px;
 color:#0d6efd;
 }
 
+h2{
+margin-top:30px;
+color:#222;
+}
+
 p{
-line-height:1.5;
+line-height:1.6;
 }
 
 label{
@@ -91,6 +137,31 @@ border-radius:6px;
 font-size:16px;
 }
 
+.info-box{
+background:#f8fbff;
+border-left:5px solid #0d6efd;
+padding:15px;
+border-radius:6px;
+margin-top:20px;
+}
+
+.links{
+margin-top:30px;
+padding:15px;
+background:#f5f7fa;
+border-radius:8px;
+}
+
+.links ul{
+padding-left:20px;
+}
+
+.links a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
 .faq{
 margin-top:30px;
 }
@@ -120,8 +191,15 @@ text-decoration:none;
 <h1>☀️ MPPT Laderegler Rechner Wohnmobil</h1>
 
 <p>
-Berechne die passende Größe deines <strong>MPPT-Solarladereglers</strong>.
-Wichtig für eine sichere und effiziente Nutzung deiner Solaranlage im Wohnmobil.
+Mit diesem <strong>MPPT Laderegler Rechner für Wohnmobil und Camper</strong> kannst du berechnen,
+welche Stromstärke dein Solarladeregler mindestens haben sollte. Der Rechner hilft dir bei der
+Dimensionierung deiner Solaranlage für <strong>12V- und 24V-Systeme</strong>.
+</p>
+
+<p>
+Ein richtig gewählter MPPT-Laderegler ist wichtig, damit deine Solarmodule die Batterie effizient,
+sicher und zuverlässig laden können. Besonders bei <strong>LiFePO₄-Batterien, autarkem Camping,
+Offgrid-Stromversorgung und größeren Solaranlagen</strong> sollte der Regler nicht zu knapp ausgelegt werden.
 </p>
 
 <h2>Berechnung</h2>
@@ -141,18 +219,61 @@ Wichtig für eine sichere und effiziente Nutzung deiner Solaranlage im Wohnmobil
 Bitte Werte eingeben.
 </div>
 
+<div class="info-box">
+<strong>Formel:</strong><br>
+Strom = Solarleistung in Wp ÷ Batteriespannung<br>
+Empfohlene MPPT-Größe = Strom plus Sicherheitsreserve
+</div>
+
+<h2>Warum ist die richtige MPPT-Größe wichtig?</h2>
+
+<p>
+Ein MPPT-Laderegler wandelt die Spannung der Solarmodule so um, dass die Batterie möglichst effizient
+geladen wird. Ist der Laderegler zu klein, kann er die mögliche Solarleistung begrenzen. Ist er passend
+dimensioniert, arbeitet das System zuverlässiger und bietet mehr Reserve für heiße Tage, gute Einstrahlung
+oder spätere Erweiterungen.
+</p>
+
+<p>
+Bei Wohnmobilen werden häufig 12V-Systeme verwendet. Bei gleicher Solarleistung fließt dort mehr Strom
+als bei 24V-Systemen. Deshalb benötigt ein 12V-System oft einen stärkeren Laderegler als ein vergleichbares
+24V-System.
+</p>
+
+<div class="links">
+<h2>Weitere hilfreiche Rechner</h2>
+<ul>
+<li><a href="../solarertrag-rechner/index.html">Solarertrag berechnen</a></li>
+<li><a href="../Batterie Rechner/index.html">Batterie und Autarkie berechnen</a></li>
+<li><a href="../Energieverbrauch-Rechner Wohnmobil/index.html">Energieverbrauch berechnen</a></li>
+<li><a href="../AH WH Rechner/index.html">Ah in Wh umrechnen</a></li>
+<li><a href="../Kabelquerschnitt Rechner/index.html">Kabelquerschnitt berechnen</a></li>
+</ul>
+</div>
+
 <div class="faq">
 
-<h2>Häufige Fragen</h2>
+<h2>Häufige Fragen zum MPPT Laderegler Rechner</h2>
 
-<p><strong>Warum brauche ich Reserve?</strong><br>
-Reserve schützt vor Lastspitzen, ungünstigen Bedingungen und späteren Erweiterungen der Solaranlage.</p>
+<p><strong>Wie berechne ich die Größe eines MPPT Ladereglers?</strong><br>
+Du teilst die gesamte Solarleistung in Watt durch die Batteriespannung in Volt. Danach addierst du eine
+Sicherheitsreserve, zum Beispiel 20 bis 30 Prozent.</p>
 
-<p><strong>12V oder 24V System?</strong><br>
-Bei 24V fließt bei gleicher Solarleistung weniger Strom. Dadurch kann der Laderegler oft kleiner dimensioniert werden.</p>
+<p><strong>Welche MPPT Größe brauche ich für 400 Watt Solar?</strong><br>
+Bei 400 Watt Solar an einem 12V-System entstehen rechnerisch etwa 33 Ampere. Mit Reserve ist häufig ein
+50A MPPT-Laderegler sinnvoll.</p>
 
-<p><strong>Was passiert bei zu kleinem MPPT?</strong><br>
-Ein zu kleiner MPPT-Laderegler begrenzt die Leistung, kann stark belastet werden oder überhitzen.</p>
+<p><strong>Warum brauche ich Sicherheitsreserve?</strong><br>
+Reserve schützt den Laderegler vor dauerhafter Maximalbelastung und lässt Spielraum für gute Einstrahlung,
+hohe Modulleistung oder spätere Erweiterungen.</p>
+
+<p><strong>Was passiert bei einem zu kleinen MPPT?</strong><br>
+Ein zu kleiner MPPT-Laderegler kann die Solarleistung begrenzen, sehr warm werden oder dauerhaft an seiner
+Belastungsgrenze arbeiten.</p>
+
+<p><strong>Ist ein 24V-System besser für große Solaranlagen?</strong><br>
+Bei 24V fließt bei gleicher Leistung weniger Strom. Das kann Vorteile bei Laderegler, Kabelquerschnitt und
+Systemeffizienz bringen.</p>
 
 </div>
 
@@ -203,8 +324,9 @@ empfehlung = "150A oder größer";
 
 document.getElementById("ergebnis").innerHTML =
 "<strong>☀️ Empfohlener MPPT:</strong> " + empfehlung + "<br><br>" +
-"📊 Berechneter Strom inkl. Reserve: " + mppt.toFixed(1).replace('.', ',') + " A<br><br>" +
-"👉 Tipp: Lieber eine Stufe größer wählen, besonders bei Winterbetrieb oder geplanter Erweiterung.";
+"<strong>📊 Strom ohne Reserve:</strong> " + strom.toFixed(1).replace('.', ',') + " A<br>" +
+"<strong>⚡ Strom inkl. Reserve:</strong> " + mppt.toFixed(1).replace('.', ',') + " A<br><br>" +
+"👉 Tipp: Lieber eine Stufe größer wählen, besonders bei Winterbetrieb, guter Einstrahlung oder geplanter Erweiterung.";
 }
 </script>
 
