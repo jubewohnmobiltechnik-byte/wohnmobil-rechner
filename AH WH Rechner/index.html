@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ah Wh Rechner Wohnmobil | Amperestunden in Wattstunden umrechnen</title>
+<title>Batterie Ladezeit Rechner Wohnmobil | Akku Ladezeit berechnen</title>
 
-<meta name="description" content="Ah Wh Rechner für Wohnmobil und Camper: Rechne Amperestunden in Wattstunden und Wattstunden in Amperestunden um. Ideal für Batterie, Solar und Autarkie.">
-<meta name="keywords" content="Ah Wh Rechner, Amperestunden in Wattstunden, Wh in Ah umrechnen, 100Ah wieviel Wh, Wohnmobil Batterie Rechner, LiFePO4 Ah Wh">
+<meta name="description" content="Batterie Ladezeit Rechner für Wohnmobil und Camper: Berechne, wie lange eine LiFePO4- oder AGM-Batterie mit Solar, Ladegerät oder Ladebooster lädt.">
+<meta name="keywords" content="Batterie Ladezeit Rechner Wohnmobil, Akku Ladezeit berechnen, LiFePO4 Ladezeit, Wohnmobil Batterie laden, Ladebooster Rechner">
 <meta name="robots" content="index, follow">
 
 <script type="application/ld+json">
@@ -17,34 +17,34 @@
 "mainEntity":[
 {
 "@type":"Question",
-"name":"Wie rechne ich Ah in Wh um?",
+"name":"Wie berechne ich die Ladezeit einer Wohnmobil Batterie?",
 "acceptedAnswer":{
 "@type":"Answer",
-"text":"Wattstunden berechnest du, indem du Amperestunden mit der Batteriespannung multiplizierst. Die Formel lautet Wh = Ah mal Volt."
+"text":"Die Ladezeit berechnet sich aus nachzuladender Kapazität in Ah geteilt durch den Ladestrom in Ampere. Zusätzlich sollten Ladeverluste berücksichtigt werden."
 }
 },
 {
 "@type":"Question",
-"name":"Wie viele Wh hat eine 100Ah Batterie bei 12V?",
+"name":"Wie lange lädt eine 100Ah LiFePO4 Batterie?",
 "acceptedAnswer":{
 "@type":"Answer",
-"text":"Eine 100Ah Batterie bei 12V hat rechnerisch 1200 Wh. Bei einer LiFePO4 Batterie ist davon meist ein großer Teil nutzbar."
+"text":"Bei 20A Ladestrom dauert das vollständige Laden einer 100Ah Batterie rechnerisch etwa 5 Stunden plus Ladeverluste."
 }
 },
 {
 "@type":"Question",
-"name":"Wie rechne ich Wh in Ah um?",
+"name":"Warum dauert das Laden in der Praxis länger?",
 "acceptedAnswer":{
 "@type":"Answer",
-"text":"Amperestunden berechnest du, indem du Wattstunden durch die Spannung teilst. Die Formel lautet Ah = Wh geteilt durch Volt."
+"text":"In der Praxis entstehen Ladeverluste. Außerdem kann der Ladestrom je nach Ladegerät, Batteriestand, Temperatur und Batteriemanagementsystem variieren."
 }
 },
 {
 "@type":"Question",
-"name":"Warum sind Wh genauer als Ah?",
+"name":"Kann ich die Ladezeit mit Solar berechnen?",
 "acceptedAnswer":{
 "@type":"Answer",
-"text":"Wh berücksichtigen die Spannung und beschreiben die tatsächliche Energiemenge. Ah allein sind ohne Spannungsangabe nicht eindeutig vergleichbar."
+"text":"Ja. Dafür wird der durchschnittliche Solar-Ladestrom oder der tägliche Solarertrag benötigt. Bei wechselndem Wetter ist die Ladezeit nur ein Richtwert."
 }
 }
 ]
@@ -121,7 +121,6 @@ border:none;
 border-radius:6px;
 font-size:16px;
 cursor:pointer;
-transition:0.2s;
 }
 
 button:hover{
@@ -134,7 +133,6 @@ padding:15px;
 background:#eef7ff;
 border-left:5px solid #0077cc;
 border-radius:6px;
-font-size:16px;
 }
 
 .info-box{
@@ -188,100 +186,97 @@ text-decoration:none;
 
 <div class="container">
 
-<h1>🔋 Ah Wh Rechner Wohnmobil</h1>
+<h1>🔋 Batterie Ladezeit Rechner Wohnmobil</h1>
 
 <p>
-Mit diesem <strong>Ah Wh Rechner für Wohnmobil und Camper</strong> kannst du
-<strong>Amperestunden in Wattstunden</strong> und <strong>Wattstunden in Amperestunden</strong>
-umrechnen. Das ist besonders wichtig für die Planung von Batterie, Solaranlage, Wechselrichter
-und autarkem Camping.
+Mit diesem <strong>Batterie Ladezeit Rechner für Wohnmobil und Camper</strong> kannst du berechnen,
+wie lange deine Bordbatterie ungefähr zum Laden benötigt. Der Rechner eignet sich für
+<strong>LiFePO₄-, AGM- und Gel-Batterien</strong> sowie für Ladegerät, Ladebooster oder Solarladung.
 </p>
 
 <p>
-Viele Batterien werden in Ah angegeben, der tatsächliche Energieverbrauch von Geräten aber meist in Wh.
-Damit du Batteriegröße, Solarertrag und Tagesverbrauch richtig vergleichen kannst, brauchst du die
-Umrechnung zwischen Ah und Wh. Besonders bei <strong>12V-, 24V- und LiFePO₄-Systemen</strong> ist diese
-Berechnung eine wichtige Grundlage.
+Die Ladezeit ist wichtig für die Planung deiner autarken Stromversorgung. Wenn du weißt, wie lange
+deine Batterie über Solar, Landstrom oder Ladebooster geladen werden muss, kannst du Standzeiten,
+Fahrzeiten und Solaranlage besser einschätzen.
 </p>
 
-<h2>Ah in Wh umrechnen</h2>
+<h2>Batterie Ladezeit berechnen</h2>
 
-<label>Kapazität in Ah</label>
-<input type="number" id="ah" placeholder="z.B. 100">
+<label>Batteriekapazität (Ah)</label>
+<input type="number" id="kapazitaet" placeholder="z.B. 100">
 
-<label>Spannung in Volt</label>
-<input type="number" id="volt1" value="12">
+<label>Aktueller Ladezustand (%)</label>
+<input type="number" id="start" placeholder="z.B. 20">
 
-<button onclick="berechneWh()">Ah in Wh umrechnen</button>
+<label>Ziel-Ladezustand (%)</label>
+<input type="number" id="ziel" value="100">
 
-<div class="result" id="ergebnisWh">
-Bitte Werte eingeben.
-</div>
+<label>Ladestrom (A)</label>
+<input type="number" id="ladestrom" placeholder="z.B. 20">
 
-<h2>Wh in Ah umrechnen</h2>
+<label>Ladeverluste (%)</label>
+<input type="number" id="verlust" value="15">
 
-<label>Energie in Wh</label>
-<input type="number" id="wh" placeholder="z.B. 1200">
+<button onclick="berechnen()">Ladezeit berechnen</button>
 
-<label>Spannung in Volt</label>
-<input type="number" id="volt2" value="12">
-
-<button onclick="berechneAh()">Wh in Ah umrechnen</button>
-
-<div class="result" id="ergebnisAh">
+<div class="result" id="ergebnis">
 Bitte Werte eingeben.
 </div>
 
 <div class="info-box">
-<strong>Formeln:</strong><br>
-Wh = Ah × Volt<br>
-Ah = Wh ÷ Volt
+<strong>Formel:</strong><br>
+Nachzuladende Ah = Batteriekapazität × Ladebereich in %<br>
+Ladezeit = nachzuladende Ah ÷ Ladestrom × Ladeverlust-Faktor
 </div>
 
-<h2>Warum ist die Umrechnung wichtig?</h2>
+<h2>Warum ist die Ladezeit nur ein Richtwert?</h2>
 
 <p>
-Ah allein sagen nur dann etwas aus, wenn die Spannung bekannt ist. Eine 100Ah Batterie bei 12V enthält
-rechnerisch 1200 Wh. Eine 100Ah Batterie bei 24V enthält dagegen 2400 Wh. Deshalb sind Wattstunden oft
-die bessere Einheit, wenn du Batterien, Verbraucher und Solarertrag miteinander vergleichen möchtest.
+Die tatsächliche Ladezeit kann von der Berechnung abweichen. Ladegeräte und Ladebooster liefern nicht
+immer dauerhaft den maximalen Ladestrom. Bei Solar hängt der Ladestrom stark von Wetter, Tageszeit,
+Schatten, Modulleistung und MPPT-Regler ab.
 </p>
 
 <p>
-Für die Wohnmobil-Planung ist Wh besonders praktisch: Der Tagesverbrauch wird häufig in Wh berechnet,
-der Solarertrag ebenfalls. Wenn du diese Werte mit deiner Batteriekapazität vergleichst, kannst du besser
-einschätzen, wie lange du autark stehen kannst.
+Bei LiFePO₄-Batterien ist die Ladekurve oft effizienter als bei AGM- oder Gel-Batterien. Trotzdem solltest
+du Ladeverluste einplanen, damit das Ergebnis realistischer wird.
 </p>
 
 <div class="links">
 <h2>Weitere hilfreiche Rechner</h2>
 <ul>
-<li><a href="../Batterie Rechner/index.html">Batterie und Autarkie berechnen</a></li>
-<li><a href="../energieverbrauch-rechner/index.html">Energieverbrauch berechnen</a></li>
-<li><a href="../solarertrag-rechner/index.html">Solarertrag berechnen</a></li>
-<li><a href="../mppt-laderegler-rechner/index.html">MPPT-Laderegler berechnen</a></li>
-<li><a href="../Kabelquerschnitt Rechner/index.html">Kabelquerschnitt berechnen</a></li>
+<li><a href="../Batterie Rechner/index.html">Batterie Rechner</a></li>
+<li><a href="../energieverbrauch-rechner/index.html">Energieverbrauch Rechner</a></li>
+<li><a href="../solarertrag-rechner/index.html">Solarertrag Rechner</a></li>
+<li><a href="../mppt-laderegler-rechner/index.html">MPPT Rechner</a></li>
+<li><a href="../ah-wh-rechner/index.html">Ah ↔ Wh Rechner</a></li>
+<li><a href="../kabelquerschnitt-rechner/index.html">Kabelquerschnitt Rechner</a></li>
 </ul>
 </div>
 
 <div class="faq">
 
-<h2>Häufige Fragen zum Ah Wh Rechner</h2>
+<h2>Häufige Fragen zum Batterie Ladezeit Rechner</h2>
 
-<p><strong>Wie rechne ich Ah in Wh um?</strong><br>
-Du multiplizierst die Amperestunden mit der Spannung. Beispiel: 100 Ah × 12 V = 1200 Wh.</p>
+<p><strong>Wie berechne ich die Ladezeit einer Batterie?</strong><br>
+Du berechnest zuerst, wie viele Ah nachgeladen werden müssen. Danach teilst du diesen Wert durch den
+Ladestrom und berücksichtigst Ladeverluste.</p>
 
-<p><strong>Wie rechne ich Wh in Ah um?</strong><br>
-Du teilst die Wattstunden durch die Spannung. Beispiel: 1200 Wh ÷ 12 V = 100 Ah.</p>
+<p><strong>Wie lange lädt eine 100Ah Batterie mit 20A?</strong><br>
+Von 0 auf 100 Prozent dauert es rechnerisch etwa 5 Stunden. Mit Ladeverlusten sind ungefähr 5,5 bis
+6 Stunden realistischer.</p>
 
-<p><strong>Wie viele Wh hat eine 100Ah Batterie?</strong><br>
-Bei 12V hat eine 100Ah Batterie rechnerisch 1200 Wh. Bei 24V sind es 2400 Wh.</p>
+<p><strong>Warum dauert Laden mit Solar länger?</strong><br>
+Solar liefert nicht konstant die volle Leistung. Wetter, Schatten, Jahreszeit und Sonnenstand beeinflussen
+den tatsächlichen Ladestrom stark.</p>
 
-<p><strong>Was ist der Unterschied zwischen Ah und Wh?</strong><br>
-Ah beschreibt die elektrische Ladungsmenge. Wh beschreibt die tatsächlich gespeicherte Energiemenge
-und ist deshalb für Vergleiche oft aussagekräftiger.</p>
+<p><strong>Welche Ladeverluste sind realistisch?</strong><br>
+Für eine grobe Planung sind 10 bis 20 Prozent Ladeverluste sinnvoll. Bei älteren Batterien oder ungünstigen
+Bedingungen kann der Wert höher liegen.</p>
 
-<p><strong>Warum ist Wh bei Wohnmobil-Batterien hilfreich?</strong><br>
-Weil du damit Batterie, Tagesverbrauch und Solarertrag direkt miteinander vergleichen kannst.</p>
+<p><strong>Ist LiFePO₄ schneller geladen als AGM?</strong><br>
+LiFePO₄-Batterien können oft höhere Ladeströme aufnehmen und sind effizienter. Dadurch kann die Ladezeit
+kürzer sein als bei AGM-Batterien.</p>
 
 </div>
 
@@ -298,42 +293,40 @@ Weil du damit Batterie, Tagesverbrauch und Solarertrag direkt miteinander vergle
 </div>
 
 <script>
-function berechneWh() {
+function berechnen(){
 
-let ah = parseFloat(document.getElementById("ah").value);
-let volt = parseFloat(document.getElementById("volt1").value);
+let kapazitaet = parseFloat(document.getElementById("kapazitaet").value);
+let start = parseFloat(document.getElementById("start").value);
+let ziel = parseFloat(document.getElementById("ziel").value);
+let ladestrom = parseFloat(document.getElementById("ladestrom").value);
+let verlust = parseFloat(document.getElementById("verlust").value);
 
-if (!ah || !volt) {
-document.getElementById("ergebnisWh").innerHTML =
-"⚠️ Bitte Ah und Spannung korrekt eingeben.";
+if(!kapazitaet || start < 0 || !ziel || !ladestrom){
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Bitte alle Pflichtwerte korrekt eingeben.";
 return;
 }
 
-let wh = ah * volt;
-let kwh = wh / 1000;
-
-document.getElementById("ergebnisWh").innerHTML =
-"<strong>🔋 Ergebnis:</strong> " + wh.toFixed(0) + " Wh<br>" +
-"<strong>📦 In kWh:</strong> " + kwh.toFixed(2).replace('.', ',') + " kWh<br><br>" +
-"👉 " + ah.toFixed(0) + " Ah bei " + volt.toFixed(0) + " V entsprechen " + wh.toFixed(0) + " Wh.";
-}
-
-function berechneAh() {
-
-let wh = parseFloat(document.getElementById("wh").value);
-let volt = parseFloat(document.getElementById("volt2").value);
-
-if (!wh || !volt) {
-document.getElementById("ergebnisAh").innerHTML =
-"⚠️ Bitte Wh und Spannung korrekt eingeben.";
+if(start >= ziel){
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Der Ziel-Ladezustand muss höher sein als der aktuelle Ladezustand.";
 return;
 }
 
-let ah = wh / volt;
+if(!verlust) verlust = 0;
 
-document.getElementById("ergebnisAh").innerHTML =
-"<strong>🔋 Ergebnis:</strong> " + ah.toFixed(1).replace('.', ',') + " Ah<br><br>" +
-"👉 " + wh.toFixed(0) + " Wh bei " + volt.toFixed(0) + " V entsprechen " + ah.toFixed(1).replace('.', ',') + " Ah.";
+let ladebereich = (ziel - start) / 100;
+let ahNachladen = kapazitaet * ladebereich;
+let ladezeit = (ahNachladen / ladestrom) * (1 + verlust / 100);
+
+let stunden = Math.floor(ladezeit);
+let minuten = Math.round((ladezeit - stunden) * 60);
+
+document.getElementById("ergebnis").innerHTML =
+"<strong>🔋 Nachzuladen:</strong> " + ahNachladen.toFixed(1).replace('.', ',') + " Ah<br>" +
+"<strong>⏱️ Geschätzte Ladezeit:</strong> " + ladezeit.toFixed(1).replace('.', ',') + " Stunden<br>" +
+"<strong>🕒 Entspricht ungefähr:</strong> " + stunden + " Stunden " + minuten + " Minuten<br><br>" +
+"👉 Die tatsächliche Ladezeit kann je nach Ladegerät, Batterie, Temperatur und Solarbedingungen abweichen.";
 }
 </script>
 
