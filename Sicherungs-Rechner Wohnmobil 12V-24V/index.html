@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Autarkie Rechner Wohnmobil | Wie lange reicht meine Batterie?</title>
+<title>Sicherungs Rechner Wohnmobil | 12V Sicherung berechnen</title>
 
-<meta name="description" content="Autarkie Rechner für Wohnmobil und Camper: Berechne, wie viele Tage deine Batterie bei deinem täglichen Stromverbrauch reicht.">
-<meta name="keywords" content="Autarkie Rechner Wohnmobil, Wohnmobil Autarkie berechnen, LiFePO4 Autarkie Rechner, Batterie Reichweite Camper, Wohnmobil Stromversorgung">
+<meta name="description" content="Sicherungs Rechner für Wohnmobil und Camper: Berechne die passende Sicherung für 12V und 24V Verbraucher, Batterie, Wechselrichter und Bordelektrik.">
+<meta name="keywords" content="Sicherungs Rechner Wohnmobil, Sicherung berechnen 12V, KFZ Sicherung Rechner, Wohnmobil Elektrik Sicherung, Camper Sicherungsgröße">
 <meta name="robots" content="index, follow">
 
 <script type="application/ld+json">
@@ -17,34 +17,34 @@
 "mainEntity":[
 {
 "@type":"Question",
-"name":"Wie berechne ich die Autarkie im Wohnmobil?",
+"name":"Wie berechne ich die Sicherung im Wohnmobil?",
 "acceptedAnswer":{
 "@type":"Answer",
-"text":"Die nutzbare Batteriekapazität in Wattstunden wird durch den täglichen Stromverbrauch geteilt. Das Ergebnis zeigt die mögliche Autarkie in Tagen."
+"text":"Die Sicherung richtet sich nach dem Betriebsstrom des Verbrauchers und einer Sicherheitsreserve. Gleichzeitig darf die Sicherung nicht größer sein, als Kabel und Komponenten sicher vertragen."
 }
 },
 {
 "@type":"Question",
-"name":"Wie lange reicht eine 200Ah LiFePO4 Batterie?",
+"name":"Welche Sicherung brauche ich bei 10 Ampere Strom?",
 "acceptedAnswer":{
 "@type":"Answer",
-"text":"Bei 12 Volt und 90 Prozent nutzbarer Kapazität stehen rund 2160 Wh zur Verfügung. Bei 720 Wh Tagesverbrauch ergibt das etwa drei Tage Autarkie."
+"text":"Bei 10 Ampere Betriebsstrom ist mit 25 Prozent Reserve rechnerisch eine Sicherung von 12,5 Ampere nötig. In der Praxis wird häufig die nächstgrößere Standardgröße gewählt."
 }
 },
 {
 "@type":"Question",
-"name":"Welche Entladetiefe ist bei LiFePO4 sinnvoll?",
+"name":"Schützt die Sicherung das Gerät oder das Kabel?",
 "acceptedAnswer":{
 "@type":"Answer",
-"text":"Viele Wohnmobilbesitzer rechnen mit etwa 90 Prozent nutzbarer Kapazität. Die genauen Herstellerangaben sollten jedoch beachtet werden."
+"text":"In der Bordelektrik schützt die Sicherung vor allem die Leitung vor Überlastung und Kurzschluss. Deshalb muss sie zum Kabelquerschnitt passen."
 }
 },
 {
 "@type":"Question",
-"name":"Beeinflusst Solar die Autarkie?",
+"name":"Wo sollte die Sicherung eingebaut werden?",
 "acceptedAnswer":{
 "@type":"Answer",
-"text":"Ja. Eine Solaranlage kann den täglichen Verbrauch teilweise oder vollständig ausgleichen und die Autarkie erheblich verlängern."
+"text":"Eine Sicherung sollte möglichst nah an der Stromquelle sitzen, zum Beispiel nahe an Batterie, Verteiler oder Pluspol."
 }
 }
 ]
@@ -186,35 +186,29 @@ text-decoration:none;
 
 <div class="container">
 
-<h1>🚐 Autarkie Rechner Wohnmobil</h1>
+<h1>🛡️ Sicherungs Rechner Wohnmobil</h1>
 
 <p>
-Mit diesem <strong>Autarkie Rechner für Wohnmobil und Camper</strong> kannst du berechnen,
-wie viele Tage deine Batterie ohne Nachladen ausreicht. Der Rechner berücksichtigt Batteriekapazität,
-Spannung, nutzbare Kapazität und deinen täglichen Stromverbrauch.
+Mit diesem <strong>Sicherungs Rechner für Wohnmobil und Camper</strong> kannst du eine passende
+Sicherungsgröße für 12V- und 24V-Verbraucher berechnen. Der Rechner hilft dir bei der Planung
+von Bordelektrik, Batterieanschluss, Solaranlage, Ladebooster, Wechselrichter und Verteilern.
 </p>
 
 <p>
-Die Autarkie ist einer der wichtigsten Werte bei der Planung einer Wohnmobil-Elektrik.
-Sie zeigt, wie lange du ohne Landstrom stehen kannst. Besonders bei LiFePO₄-Batterien,
-Solaranlagen und Offgrid-Camping ist diese Berechnung hilfreich.
+Eine Sicherung schützt in erster Linie die Leitung vor Überlastung und Kurzschluss. Deshalb muss sie
+nicht nur zum Verbraucher passen, sondern auch zum verwendeten Kabelquerschnitt. Eine zu große Sicherung
+kann gefährlich sein, weil das Kabel im Fehlerfall überlastet werden kann.
 </p>
 
-<h2>Autarkie berechnen</h2>
+<h2>Sicherung berechnen</h2>
 
-<label>Batteriekapazität (Ah)</label>
-<input type="number" id="ah" placeholder="z.B. 200">
+<label>Betriebsstrom des Verbrauchers (A)</label>
+<input type="number" id="strom" placeholder="z.B. 10">
 
-<label>Batteriespannung (V)</label>
-<input type="number" id="volt" value="12">
+<label>Sicherheitsreserve (%)</label>
+<input type="number" id="reserve" value="25">
 
-<label>Nutzbare Kapazität (%)</label>
-<input type="number" id="nutzbar" value="90">
-
-<label>Täglicher Verbrauch (Wh)</label>
-<input type="number" id="verbrauch" placeholder="z.B. 720">
-
-<button onclick="berechnen()">Autarkie berechnen</button>
+<button onclick="berechnen()">Sicherung berechnen</button>
 
 <div class="result" id="ergebnis">
 Bitte Werte eingeben.
@@ -222,53 +216,58 @@ Bitte Werte eingeben.
 
 <div class="info-box">
 <strong>Formel:</strong><br>
-Nutzbare Energie = Ah × Volt × Nutzbare Kapazität<br>
-Autarkie = Nutzbare Wh ÷ Tagesverbrauch
+Empfohlener Sicherungswert = Betriebsstrom × Sicherheitsreserve<br><br>
+<strong>Wichtig:</strong> Die Sicherung darf nicht größer gewählt werden, als Kabel und Bauteile sicher vertragen.
 </div>
 
-<h2>Wie viele Tage reicht die Batterie?</h2>
+<h2>Warum ist die richtige Sicherung wichtig?</h2>
 
 <p>
-Die Reichweite deiner Bordbatterie hängt direkt vom täglichen Energieverbrauch ab.
-Je geringer der Verbrauch und je größer die nutzbare Batteriekapazität, desto länger
-kannst du ohne Nachladen stehen.
+In einer Wohnmobil-Elektrik fließen bei 12V oft hohe Ströme. Schon kleine Fehler, beschädigte Kabel
+oder falsch angeschlossene Verbraucher können zu Kurzschlüssen führen. Eine richtig gewählte Sicherung
+trennt den Stromkreis, bevor Leitungen gefährlich heiß werden.
 </p>
 
 <p>
-Eine Solaranlage kann die Autarkie zusätzlich deutlich verlängern, indem sie tagsüber
-einen Teil des Stromverbrauchs wieder ausgleicht.
+Besonders bei Batterie, Wechselrichter, Ladebooster und Solarladeregler ist die passende Absicherung
+wichtig. Die Sicherung sollte möglichst nah an der Stromquelle sitzen, damit auch die Leitung selbst
+geschützt ist.
 </p>
 
 <div class="links">
 <h2>Weitere hilfreiche Rechner</h2>
 <ul>
-<li><a href="../Batterie Rechner/index.html">Batterie Rechner</a></li>
-<li><a href="../energieverbrauch-rechner/index.html">Energieverbrauch Rechner</a></li>
-<li><a href="../solarertrag-rechner/index.html">Solarertrag Rechner</a></li>
-<li><a href="../batterie-ladezeit-rechner/index.html">Batterie Ladezeit Rechner</a></li>
-<li><a href="../ah-wh-rechner/index.html">Ah ↔ Wh Rechner</a></li>
+<li><a href="../kabelquerschnitt-rechner/index.html">Kabelquerschnitt Rechner</a></li>
 <li><a href="../wechselrichter-rechner/index.html">Wechselrichter Rechner</a></li>
+<li><a href="../Batterie Rechner/index.html">Batterie Rechner</a></li>
+<li><a href="../mppt-laderegler-rechner/index.html">MPPT Rechner</a></li>
+<li><a href="../ah-wh-rechner/index.html">Ah ↔ Wh Rechner</a></li>
+<li><a href="../autarkie-rechner/index.html">Autarkie Rechner</a></li>
 </ul>
 </div>
 
 <div class="faq">
 
-<h2>Häufige Fragen zum Autarkie Rechner</h2>
+<h2>Häufige Fragen zum Sicherungs Rechner</h2>
 
-<p><strong>Wie berechne ich die Autarkie?</strong><br>
-Die nutzbare Energie der Batterie wird durch den täglichen Stromverbrauch geteilt. Das Ergebnis entspricht der möglichen Standzeit in Tagen.</p>
+<p><strong>Wie berechne ich eine Sicherung?</strong><br>
+Du nimmst den Betriebsstrom des Verbrauchers und addierst eine Sicherheitsreserve. Danach wählst du
+die nächstgrößere passende Standard-Sicherung.</p>
 
-<p><strong>Wie lange reicht eine 200Ah LiFePO4 Batterie?</strong><br>
-Bei 12V und 90 Prozent nutzbarer Kapazität stehen etwa 2160 Wh zur Verfügung. Bei 720 Wh Tagesverbrauch ergibt das ungefähr drei Tage.</p>
+<p><strong>Welche Sicherung brauche ich bei 10A?</strong><br>
+Bei 10A Betriebsstrom und 25 Prozent Reserve ergibt sich 12,5A. Eine passende Standardgröße wäre meist
+15A, sofern der Kabelquerschnitt dafür geeignet ist.</p>
 
-<p><strong>Welche Entladetiefe ist sinnvoll?</strong><br>
-Bei LiFePO4 werden häufig 80 bis 90 Prozent angesetzt. AGM-Batterien werden oft nur bis etwa 50 Prozent genutzt.</p>
+<p><strong>Schützt die Sicherung das Gerät oder das Kabel?</strong><br>
+Die Sicherung schützt vor allem das Kabel vor Überlastung und Kurzschluss. Deshalb muss sie immer zum
+Kabelquerschnitt passen.</p>
 
-<p><strong>Kann Solar die Autarkie erhöhen?</strong><br>
-Ja. Jeder durch Solar erzeugte Wattstunde reduziert den täglichen Batterieverbrauch und verlängert die Standzeit.</p>
+<p><strong>Wo sitzt die Sicherung im Wohnmobil?</strong><br>
+Eine Sicherung sollte möglichst nah an der Stromquelle sitzen, zum Beispiel nahe an Batterie, Plusverteiler
+oder Ladegerät.</p>
 
-<p><strong>Warum wird in Wh gerechnet?</strong><br>
-Wattstunden ermöglichen einen direkten Vergleich zwischen Batterie, Verbrauchern und Solarertrag.</p>
+<p><strong>Darf ich einfach eine größere Sicherung einsetzen?</strong><br>
+Nein. Eine größere Sicherung kann gefährlich sein, wenn Kabel oder Bauteile dafür nicht ausgelegt sind.</p>
 
 </div>
 
@@ -287,36 +286,41 @@ Wattstunden ermöglichen einen direkten Vergleich zwischen Batterie, Verbraucher
 <script>
 function berechnen(){
 
-let ah = parseFloat(document.getElementById("ah").value);
-let volt = parseFloat(document.getElementById("volt").value);
-let nutzbar = parseFloat(document.getElementById("nutzbar").value);
-let verbrauch = parseFloat(document.getElementById("verbrauch").value);
+let strom = parseFloat(document.getElementById("strom").value);
+let reserve = parseFloat(document.getElementById("reserve").value);
 
-if(!ah || !volt || !nutzbar || !verbrauch){
+if(!strom){
 document.getElementById("ergebnis").innerHTML =
-"⚠️ Bitte alle Werte korrekt eingeben.";
+"⚠️ Bitte den Betriebsstrom korrekt eingeben.";
 return;
 }
 
-let nutzbareWh = ah * volt * (nutzbar / 100);
-let tage = nutzbareWh / verbrauch;
+if(!reserve) reserve = 0;
 
-let bewertung = "";
+let berechnet = strom * (1 + reserve / 100);
 
-if(tage < 1)
-bewertung = "⚠️ Weniger als 1 Tag Autarkie";
-else if(tage < 3)
-bewertung = "✅ Solide Autarkie für Kurztrips";
-else if(tage < 7)
-bewertung = "✅ Gute Autarkie für längere Reisen";
+const standard = [1,2,3,5,7.5,10,15,20,25,30,40,50,60,80,100,125,150,200,250,300];
+
+let empfehlung = standard.find(s => s >= berechnet);
+
+if(!empfehlung){
+empfehlung = "größer als 300";
+}
+
+let hinweis = "";
+
+if(berechnet <= 15)
+hinweis = "✅ Typischer Bereich für kleine 12V-Verbraucher.";
+else if(berechnet <= 60)
+hinweis = "⚠️ Mittlerer Stromkreis – Kabelquerschnitt unbedingt prüfen.";
 else
-bewertung = "🚐 Sehr hohe Autarkie";
+hinweis = "❌ Hoher Strom – Batterieanschluss, Kabel, Sicherungshalter und Komponenten sorgfältig dimensionieren.";
 
 document.getElementById("ergebnis").innerHTML =
-"<strong>🔋 Nutzbare Energie:</strong> " + nutzbareWh.toFixed(0) + " Wh<br>" +
-"<strong>📅 Autarkie:</strong> " + tage.toFixed(1).replace('.', ',') + " Tage<br><br>" +
-"<strong>Status:</strong> " + bewertung + "<br><br>" +
-"👉 Solarertrag und Nachladen während der Fahrt können die tatsächliche Autarkie deutlich erhöhen.";
+"<strong>🛡️ Berechneter Sicherungswert:</strong> " + berechnet.toFixed(1).replace('.', ',') + " A<br>" +
+"<strong>✅ Empfohlene Standard-Sicherung:</strong> " + empfehlung + " A<br><br>" +
+"<strong>Hinweis:</strong> " + hinweis + "<br><br>" +
+"👉 Prüfe zusätzlich, ob der Kabelquerschnitt für diese Sicherungsgröße geeignet ist.";
 }
 </script>
 
