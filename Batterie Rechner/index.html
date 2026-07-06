@@ -4,11 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Batterie Rechner Wohnmobil | Jube-Tech</title>
+<title>Batterie Rechner Wohnmobil | Autarkie & LiFePO₄ berechnen</title>
 
-<meta name="description" content="Wohnmobil Batterie Rechner: Berechne Autarkie, Batterielaufzeit und realistische Nutzungsdauer basierend auf Verbrauch, Spannung und Kapazität. Ideal für LiFePO4 und AGM Systeme.">
-<meta name="keywords" content="Wohnmobil Batterie Rechner, Autarkie Rechner, LiFePO4 Berechnung, Batterie Laufzeit Wohnmobil, Ah in Wh Rechner, Stromverbrauch Camper">
+<meta name="description" content="Batterie Rechner für Wohnmobil und Camper: Berechne Autarkie, Batteriekapazität, Nutzenergie und Laufzeit für LiFePO₄, AGM und 12V-Systeme.">
+<meta name="keywords" content="Batterie Rechner Wohnmobil, Wohnmobil Batterie berechnen, LiFePO4 Rechner, Autarkie Rechner Wohnmobil, Batteriekapazität Camper, Ah Wh Rechner">
 <meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"Wie berechne ich die Batteriekapazität im Wohnmobil?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Die Batteriekapazität wird über Amperestunden mal Spannung berechnet. Eine 200 Ah Batterie bei 12 Volt hat theoretisch 2400 Wh Energie."
+}
+},
+{
+"@type":"Question",
+"name":"Wie viel nutzbare Energie hat eine LiFePO4 Batterie?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"LiFePO4 Batterien können meist deutlich tiefer entladen werden als AGM Batterien. In der Praxis wird häufig mit etwa 80 bis 90 Prozent nutzbarer Kapazität gerechnet."
+}
+},
+{
+"@type":"Question",
+"name":"Wie lange hält eine Wohnmobil Batterie?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Die Laufzeit hängt vom täglichen Stromverbrauch ab. Nutzbare Batteriekapazität in Wh geteilt durch Tagesverbrauch in Wh ergibt die ungefähre Autarkiezeit."
+}
+}
+]
+}
+</script>
 
 <style>
 body{
@@ -45,8 +78,13 @@ margin-bottom:10px;
 color:#0d6efd;
 }
 
+h2{
+margin-top:30px;
+color:#222;
+}
+
 p{
-line-height:1.5;
+line-height:1.6;
 }
 
 label{
@@ -97,13 +135,37 @@ color:#666;
 margin-top:10px;
 }
 
+.info-box{
+background:#f8fbff;
+border-left:5px solid #0d6efd;
+padding:15px;
+border-radius:6px;
+margin-top:20px;
+}
+
+.links{
+margin-top:30px;
+padding:15px;
+background:#f5f7fa;
+border-radius:8px;
+}
+
+.links ul{
+padding-left:20px;
+}
+
+.links a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
 .faq{
 margin-top:30px;
 }
 
-.faq h2{
-font-size:20px;
-margin-bottom:10px;
+.faq p{
+margin-bottom:18px;
 }
 
 footer{
@@ -131,8 +193,16 @@ text-decoration:none;
 <h1>🔋 Batterie Rechner Wohnmobil</h1>
 
 <p>
-Berechne die <strong>realistische Autarkie deines Wohnmobils</strong> auf Basis von Verbrauch, Batteriespannung und Kapazität.
-Ideal für <strong>LiFePO₄</strong> und AGM Systeme im Camper-Ausbau.
+Mit diesem <strong>Batterie Rechner für Wohnmobil und Camper</strong> kannst du berechnen,
+wie lange deine Batterie deine Verbraucher versorgen kann. Der Rechner eignet sich für
+<strong>12V-Systeme, LiFePO₄-Batterien und AGM-Batterien</strong>.
+</p>
+
+<p>
+Gerade im Wohnmobil ist die Batteriekapazität entscheidend für die Autarkie. Kühlschrank,
+Licht, Wasserpumpe, Heizung, Ladegeräte und Wechselrichter verbrauchen täglich Energie.
+Mit diesem Rechner bekommst du eine schnelle Einschätzung, ob deine Batterie für einen,
+zwei oder mehrere Tage ohne Landstrom ausreicht.
 </p>
 
 <h2>Berechnung</h2>
@@ -153,21 +223,59 @@ Bitte Werte eingeben und berechnen.
 </div>
 
 <div class="small">
-Hinweis: LiFePO₄ Batterien können deutlich tiefer entladen werden als AGM Batterien.
+Hinweis: Das Ergebnis ist eine praxisnahe Schätzung. Wechselrichterverluste, Temperatur,
+Alter der Batterie und Leitungsverluste können die tatsächliche Laufzeit beeinflussen.
+</div>
+
+<div class="info-box">
+<strong>Formel:</strong><br>
+Batterieenergie in Wh = Batteriekapazität in Ah × Batteriespannung in V<br>
+Autarkie in Tagen = nutzbare Energie ÷ täglicher Verbrauch
+</div>
+
+<h2>Warum ist die nutzbare Kapazität wichtig?</h2>
+
+<p>
+Eine Batterie mit 200 Ah bei 12 Volt hat theoretisch 2400 Wh Energie. In der Praxis sollte
+aber nicht immer die gesamte Kapazität eingeplant werden. Bei LiFePO₄-Batterien ist der
+nutzbare Anteil meist deutlich höher als bei AGM-Batterien. Deshalb rechnet dieser Rechner
+mit einem praxisnahen Sicherheitsabschlag.
+</p>
+
+<div class="links">
+<h2>Weitere hilfreiche Rechner</h2>
+<ul>
+<li><a href="../AH WH Rechner/index.html">Ah in Wh umrechnen</a></li>
+<li><a href="../Solarertrag Rechner/index.html">Solarertrag im Wohnmobil berechnen</a></li>
+<li><a href="../Wechselrichter-Rechner Wohnmobil/index.html">Wechselrichter berechnen</a></li>
+<li><a href="../Energieverbrauch-Rechner Wohnmobil/index.html">Energieverbrauch berechnen</a></li>
+<li><a href="../Kabelquerschnitt Rechner/index.html">Kabelquerschnitt berechnen</a></li>
+</ul>
 </div>
 
 <div class="faq">
 
-<h2>Häufige Fragen</h2>
+<h2>Häufige Fragen zum Batterie Rechner</h2>
 
-<p><strong>Wie realistisch ist das Ergebnis?</strong><br>
-Das Ergebnis basiert auf idealen Bedingungen. Verluste durch Wechselrichter, Temperatur und Leitungen können die Laufzeit reduzieren.</p>
+<p><strong>Wie berechne ich die Batteriekapazität im Wohnmobil?</strong><br>
+Die Batteriekapazität wird berechnet, indem du Amperestunden mit der Spannung multiplizierst.
+Beispiel: 200 Ah × 12 V = 2400 Wh.</p>
 
-<p><strong>Warum ist meine Autarkie so niedrig?</strong><br>
-Meist liegt es an hohen Verbrauchern wie Kaffeemaschine, Wechselrichter, Kühlschrank oder Heizung.</p>
+<p><strong>Wie viel nutzbare Energie hat eine LiFePO₄ Batterie?</strong><br>
+LiFePO₄-Batterien können meist deutlich tiefer entladen werden als AGM-Batterien.
+In der Praxis wird oft mit etwa 80 bis 90 Prozent nutzbarer Kapazität gerechnet.</p>
 
-<p><strong>Welche Batterie ist besser?</strong><br>
-LiFePO₄ Batterien bieten mehr nutzbare Kapazität, längere Lebensdauer und geringeres Gewicht.</p>
+<p><strong>Wie lange hält eine 100 Ah Batterie im Wohnmobil?</strong><br>
+Bei 12 Volt hat eine 100 Ah Batterie theoretisch 1200 Wh. Bei einem Tagesverbrauch von
+600 Wh reicht sie ungefähr für etwa zwei Tage, abhängig vom Batterietyp und den Verlusten.</p>
+
+<p><strong>Warum ist meine Autarkie geringer als erwartet?</strong><br>
+Häufig liegt es an starken Verbrauchern wie Kaffeemaschine, Föhn, Wechselrichter,
+Kompressorkühlschrank oder elektrischer Heizung.</p>
+
+<p><strong>Was ist besser: AGM oder LiFePO₄?</strong><br>
+LiFePO₄-Batterien sind leichter, langlebiger und bieten mehr nutzbare Kapazität.
+AGM-Batterien sind oft günstiger, aber schwerer und weniger tief entladbar.</p>
 
 </div>
 
@@ -197,20 +305,16 @@ return;
 }
 
 let batterieWh = kapazitaet * spannung;
-
-// Nutzbare Energie (ca. 85%)
 let nutzbar = batterieWh * 0.85;
-
-// Theoretische Tage
 let tage = nutzbar / verbrauch;
-
-// Praxisabschlag
 let real = tage * 0.9;
 
 document.getElementById("ergebnis").innerHTML =
-"<strong>🔋 Theoretische Autarkie:</strong> " + tage.toFixed(1) + " Tage<br>" +
-"<strong>⚡ Realistische Autarkie:</strong> " + real.toFixed(1) + " Tage<br><br>" +
-"👉 Empfehlung: Unter 2 Tagen → Batteriekapazität erhöhen oder Verbrauch reduzieren.";
+"<strong>🔋 Theoretische Batteriekapazität:</strong> " + batterieWh.toFixed(0) + " Wh<br>" +
+"<strong>⚡ Nutzbare Energie:</strong> " + nutzbar.toFixed(0) + " Wh<br>" +
+"<strong>📅 Theoretische Autarkie:</strong> " + tage.toFixed(1) + " Tage<br>" +
+"<strong>✅ Realistische Autarkie:</strong> " + real.toFixed(1) + " Tage<br><br>" +
+"👉 Empfehlung: Unter 2 Tagen solltest du Batteriekapazität erhöhen, Verbrauch reduzieren oder Solarleistung ergänzen.";
 }
 </script>
 
