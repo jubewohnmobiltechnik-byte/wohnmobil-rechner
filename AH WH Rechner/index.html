@@ -4,11 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ah ↔ Wh Umrechner Wohnmobil | Jube-Tech</title>
+<title>Ah Wh Rechner Wohnmobil | Amperestunden in Wattstunden umrechnen</title>
 
-<meta name="description" content="Ah in Wh umrechnen im Wohnmobil: einfacher Batterie-Rechner für LiFePO4, AGM und Solarsysteme. Berechne schnell Kapazität, Energie und Verbrauch.">
-<meta name="keywords" content="Ah Wh Rechner, Wohnmobil Batterie Umrechner, Ah in Wh, Wh in Ah, LiFePO4 Berechnung, Solar Batterie Rechner Camper">
+<meta name="description" content="Ah Wh Rechner für Wohnmobil und Camper: Rechne Amperestunden in Wattstunden und Wattstunden in Amperestunden um. Ideal für Batterie, Solar und Autarkie.">
+<meta name="keywords" content="Ah Wh Rechner, Amperestunden in Wattstunden, Wh in Ah umrechnen, 100Ah wieviel Wh, Wohnmobil Batterie Rechner, LiFePO4 Ah Wh">
 <meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"Wie rechne ich Ah in Wh um?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Wattstunden berechnest du, indem du Amperestunden mit der Batteriespannung multiplizierst. Die Formel lautet Wh = Ah mal Volt."
+}
+},
+{
+"@type":"Question",
+"name":"Wie viele Wh hat eine 100Ah Batterie bei 12V?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Eine 100Ah Batterie bei 12V hat rechnerisch 1200 Wh. Bei einer LiFePO4 Batterie ist davon meist ein großer Teil nutzbar."
+}
+},
+{
+"@type":"Question",
+"name":"Wie rechne ich Wh in Ah um?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Amperestunden berechnest du, indem du Wattstunden durch die Spannung teilst. Die Formel lautet Ah = Wh geteilt durch Volt."
+}
+},
+{
+"@type":"Question",
+"name":"Warum sind Wh genauer als Ah?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Wh berücksichtigen die Spannung und beschreiben die tatsächliche Energiemenge. Ah allein sind ohne Spannungsangabe nicht eindeutig vergleichbar."
+}
+}
+]
+}
+</script>
 
 <style>
 body{
@@ -20,7 +61,7 @@ color:#222;
 }
 
 .back{
-max-width:750px;
+max-width:820px;
 margin:0 auto 15px auto;
 }
 
@@ -31,7 +72,7 @@ font-weight:bold;
 }
 
 .container{
-max-width:750px;
+max-width:820px;
 margin:auto;
 background:white;
 padding:25px;
@@ -45,8 +86,13 @@ margin-bottom:10px;
 color:#0d6efd;
 }
 
+h2{
+margin-top:30px;
+color:#222;
+}
+
 p{
-line-height:1.5;
+line-height:1.6;
 }
 
 label{
@@ -91,19 +137,33 @@ border-radius:6px;
 font-size:16px;
 }
 
+.info-box{
+background:#f8fbff;
+border-left:5px solid #0d6efd;
+padding:15px;
+border-radius:6px;
+margin-top:20px;
+}
+
+.links{
+margin-top:30px;
+padding:15px;
+background:#f5f7fa;
+border-radius:8px;
+}
+
+.links ul{
+padding-left:20px;
+}
+
+.links a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
 .faq{
 margin-top:30px;
-}
-
-.faq h2{
-font-size:20px;
-margin-bottom:10px;
-}
-
-.small{
-font-size:13px;
-color:#666;
-margin-top:10px;
 }
 
 footer{
@@ -128,46 +188,100 @@ text-decoration:none;
 
 <div class="container">
 
-<h1>🔋 Ah ↔ Wh Umrechner Wohnmobil</h1>
+<h1>🔋 Ah Wh Rechner Wohnmobil</h1>
 
 <p>
-Der wichtigste Umrechner für <strong>Batterie, Solar und Autarkie im Wohnmobil</strong>.
-Rechne schnell zwischen <strong>Amperestunden (Ah)</strong> und <strong>Wattstunden (Wh)</strong> um.
+Mit diesem <strong>Ah Wh Rechner für Wohnmobil und Camper</strong> kannst du
+<strong>Amperestunden in Wattstunden</strong> und <strong>Wattstunden in Amperestunden</strong>
+umrechnen. Das ist besonders wichtig für die Planung von Batterie, Solaranlage, Wechselrichter
+und autarkem Camping.
 </p>
 
-<h2>Umrechnung</h2>
+<p>
+Viele Batterien werden in Ah angegeben, der tatsächliche Energieverbrauch von Geräten aber meist in Wh.
+Damit du Batteriegröße, Solarertrag und Tagesverbrauch richtig vergleichen kannst, brauchst du die
+Umrechnung zwischen Ah und Wh. Besonders bei <strong>12V-, 24V- und LiFePO₄-Systemen</strong> ist diese
+Berechnung eine wichtige Grundlage.
+</p>
 
-<label>Spannung (V)</label>
-<input type="number" id="spannung" value="12" placeholder="z.B. 12 oder 24">
+<h2>Ah in Wh umrechnen</h2>
 
-<label>Amperestunden (Ah)</label>
-<input type="number" id="ah" placeholder="z.B. 200">
+<label>Kapazität in Ah</label>
+<input type="number" id="ah" placeholder="z.B. 100">
 
-<label>Wattstunden (Wh)</label>
-<input type="number" id="wh" placeholder="z.B. 2400">
+<label>Spannung in Volt</label>
+<input type="number" id="volt1" value="12">
 
-<button onclick="berechnen()">Umrechnen</button>
+<button onclick="berechneWh()">Ah in Wh umrechnen</button>
 
-<div class="result" id="ergebnis">
+<div class="result" id="ergebnisWh">
 Bitte Werte eingeben.
 </div>
 
-<div class="small">
-Hinweis: Immer nur EINEN Wert (Ah oder Wh) ausfüllen, der andere wird berechnet.
+<h2>Wh in Ah umrechnen</h2>
+
+<label>Energie in Wh</label>
+<input type="number" id="wh" placeholder="z.B. 1200">
+
+<label>Spannung in Volt</label>
+<input type="number" id="volt2" value="12">
+
+<button onclick="berechneAh()">Wh in Ah umrechnen</button>
+
+<div class="result" id="ergebnisAh">
+Bitte Werte eingeben.
+</div>
+
+<div class="info-box">
+<strong>Formeln:</strong><br>
+Wh = Ah × Volt<br>
+Ah = Wh ÷ Volt
+</div>
+
+<h2>Warum ist die Umrechnung wichtig?</h2>
+
+<p>
+Ah allein sagen nur dann etwas aus, wenn die Spannung bekannt ist. Eine 100Ah Batterie bei 12V enthält
+rechnerisch 1200 Wh. Eine 100Ah Batterie bei 24V enthält dagegen 2400 Wh. Deshalb sind Wattstunden oft
+die bessere Einheit, wenn du Batterien, Verbraucher und Solarertrag miteinander vergleichen möchtest.
+</p>
+
+<p>
+Für die Wohnmobil-Planung ist Wh besonders praktisch: Der Tagesverbrauch wird häufig in Wh berechnet,
+der Solarertrag ebenfalls. Wenn du diese Werte mit deiner Batteriekapazität vergleichst, kannst du besser
+einschätzen, wie lange du autark stehen kannst.
+</p>
+
+<div class="links">
+<h2>Weitere hilfreiche Rechner</h2>
+<ul>
+<li><a href="../Batterie Rechner/index.html">Batterie und Autarkie berechnen</a></li>
+<li><a href="../energieverbrauch-rechner/index.html">Energieverbrauch berechnen</a></li>
+<li><a href="../solarertrag-rechner/index.html">Solarertrag berechnen</a></li>
+<li><a href="../mppt-laderegler-rechner/index.html">MPPT-Laderegler berechnen</a></li>
+<li><a href="../Kabelquerschnitt Rechner/index.html">Kabelquerschnitt berechnen</a></li>
+</ul>
 </div>
 
 <div class="faq">
 
-<h2>Häufige Fragen</h2>
+<h2>Häufige Fragen zum Ah Wh Rechner</h2>
 
 <p><strong>Wie rechne ich Ah in Wh um?</strong><br>
-Ah × Volt = Wh</p>
+Du multiplizierst die Amperestunden mit der Spannung. Beispiel: 100 Ah × 12 V = 1200 Wh.</p>
 
 <p><strong>Wie rechne ich Wh in Ah um?</strong><br>
-Wh ÷ Volt = Ah</p>
+Du teilst die Wattstunden durch die Spannung. Beispiel: 1200 Wh ÷ 12 V = 100 Ah.</p>
 
-<p><strong>Warum ist die Spannung wichtig?</strong><br>
-Weil 12V, 24V und 48V Systeme komplett unterschiedliche Energiemengen ergeben.</p>
+<p><strong>Wie viele Wh hat eine 100Ah Batterie?</strong><br>
+Bei 12V hat eine 100Ah Batterie rechnerisch 1200 Wh. Bei 24V sind es 2400 Wh.</p>
+
+<p><strong>Was ist der Unterschied zwischen Ah und Wh?</strong><br>
+Ah beschreibt die elektrische Ladungsmenge. Wh beschreibt die tatsächlich gespeicherte Energiemenge
+und ist deshalb für Vergleiche oft aussagekräftiger.</p>
+
+<p><strong>Warum ist Wh bei Wohnmobil-Batterien hilfreich?</strong><br>
+Weil du damit Batterie, Tagesverbrauch und Solarertrag direkt miteinander vergleichen kannst.</p>
 
 </div>
 
@@ -184,42 +298,42 @@ Weil 12V, 24V und 48V Systeme komplett unterschiedliche Energiemengen ergeben.</
 </div>
 
 <script>
-function berechnen() {
+function berechneWh() {
 
-let v = parseFloat(document.getElementById("spannung").value);
 let ah = parseFloat(document.getElementById("ah").value);
+let volt = parseFloat(document.getElementById("volt1").value);
+
+if (!ah || !volt) {
+document.getElementById("ergebnisWh").innerHTML =
+"⚠️ Bitte Ah und Spannung korrekt eingeben.";
+return;
+}
+
+let wh = ah * volt;
+let kwh = wh / 1000;
+
+document.getElementById("ergebnisWh").innerHTML =
+"<strong>🔋 Ergebnis:</strong> " + wh.toFixed(0) + " Wh<br>" +
+"<strong>📦 In kWh:</strong> " + kwh.toFixed(2).replace('.', ',') + " kWh<br><br>" +
+"👉 " + ah.toFixed(0) + " Ah bei " + volt.toFixed(0) + " V entsprechen " + wh.toFixed(0) + " Wh.";
+}
+
+function berechneAh() {
+
 let wh = parseFloat(document.getElementById("wh").value);
+let volt = parseFloat(document.getElementById("volt2").value);
 
-if (!v) {
-document.getElementById("ergebnis").innerHTML =
-"⚠️ Bitte Spannung eingeben.";
+if (!wh || !volt) {
+document.getElementById("ergebnisAh").innerHTML =
+"⚠️ Bitte Wh und Spannung korrekt eingeben.";
 return;
 }
 
-if (ah && !wh) {
-let resultWh = ah * v;
+let ah = wh / volt;
 
-document.getElementById("ergebnis").innerHTML =
-"<strong>🔋 Ergebnis:</strong><br>" +
-ah + " Ah = " + resultWh.toFixed(1) + " Wh bei " + v + "V<br><br>" +
-"👉 Diese Energie steht deinem Wohnmobil-System theoretisch zur Verfügung.<br><br>" +
-"🔧 Passende Batterien findest du im JUBE-TECH Shop.";
-return;
-}
-
-if (wh && !ah) {
-let resultAh = wh / v;
-
-document.getElementById("ergebnis").innerHTML =
-"<strong>🔋 Ergebnis:</strong><br>" +
-wh + " Wh = " + resultAh.toFixed(1) + " Ah bei " + v + "V<br><br>" +
-"👉 Das hilft dir bei der Dimensionierung deiner Batterie.<br><br>" +
-"🔧 Passende Systeme findest du im JUBE-TECH Shop.";
-return;
-}
-
-document.getElementById("ergebnis").innerHTML =
-"⚠️ Bitte nur Ah ODER Wh eingeben (nicht beides gleichzeitig).";
+document.getElementById("ergebnisAh").innerHTML =
+"<strong>🔋 Ergebnis:</strong> " + ah.toFixed(1).replace('.', ',') + " Ah<br><br>" +
+"👉 " + wh.toFixed(0) + " Wh bei " + volt.toFixed(0) + " V entsprechen " + ah.toFixed(1).replace('.', ',') + " Ah.";
 }
 </script>
 
