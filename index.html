@@ -3,7 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wohnmobil Rechner – Jube-Tech</title>
+
+<title>Wohnmobil Rechner | Strom, Solar, Batterie & Elektrik berechnen</title>
+
+<meta name="description" content="Kostenlose Wohnmobil Rechner für Strom, Solar, Batterie, Kabelquerschnitt, Wechselrichter, Sicherungen, MPPT-Laderegler und Spannungsabfall im Camper.">
+<meta name="keywords" content="Wohnmobil Rechner, Camper Rechner, Wohnmobil Elektrik Rechner, Batterie Rechner Wohnmobil, Solar Rechner Wohnmobil, Kabelquerschnitt Rechner, Wechselrichter Rechner Wohnmobil">
+<meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebSite",
+"name":"Wohnmobil Rechner",
+"url":"https://jubewohnmobiltechnik-byte.github.io/wohnmobil-rechner/",
+"description":"Kostenlose Rechner für Wohnmobil-Elektrik, Batterie, Solar, Kabelquerschnitt, Wechselrichter und Stromverbrauch im Camper."
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"Welche Wohnmobil Rechner gibt es auf dieser Seite?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Auf dieser Seite findest du Rechner für Batterie, Solarertrag, Kabelquerschnitt, Wechselrichter, Spannungsabfall, Sicherungen, MPPT-Laderegler, Energieverbrauch und Batterielaufzeit."
+}
+},
+{
+"@type":"Question",
+"name":"Sind die Wohnmobil Rechner kostenlos?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Ja, alle Rechner auf dieser Seite können kostenlos genutzt werden."
+}
+},
+{
+"@type":"Question",
+"name":"Für wen sind die Rechner geeignet?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Die Rechner eignen sich für Wohnmobilbesitzer, Camper, Selbstausbauer und alle, die eine 12V- oder 24V-Anlage planen."
+}
+}
+]
+}
+</script>
 
 <style>
 body{
@@ -11,13 +59,14 @@ body{
     background:#f5f7fa;
     margin:0;
     padding:0;
+    color:#222;
 }
 
 header{
     background:linear-gradient(135deg,#0d6efd,#084298);
     color:white;
     text-align:center;
-    padding:40px 20px;
+    padding:45px 20px;
 }
 
 header h1{
@@ -27,12 +76,33 @@ header h1{
 
 header p{
     font-size:18px;
+    max-width:800px;
+    margin:15px auto 0 auto;
+    line-height:1.5;
 }
 
 .container{
     max-width:1200px;
     margin:auto;
     padding:30px 20px;
+}
+
+.intro{
+    background:white;
+    border-radius:14px;
+    padding:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+.intro h2{
+    color:#0d6efd;
+    margin-top:0;
+}
+
+.intro p{
+    line-height:1.7;
+    color:#444;
 }
 
 .grid{
@@ -66,6 +136,24 @@ header p{
     line-height:1.5;
 }
 
+.faq{
+    background:white;
+    border-radius:14px;
+    padding:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    margin-top:35px;
+}
+
+.faq h2{
+    color:#0d6efd;
+    margin-top:0;
+}
+
+.faq p{
+    line-height:1.6;
+    color:#444;
+}
+
 footer{
     text-align:center;
     padding:30px;
@@ -83,74 +171,108 @@ footer a{
 
 <header>
     <h1>🚐 Wohnmobil Rechner</h1>
-    <p>Praktische Rechner für Strom, Solar, Batterien und Elektrik im Wohnmobil</p>
+    <p>Kostenlose Rechner für Strom, Solar, Batterie, Kabelquerschnitt, Wechselrichter und Elektrik im Wohnmobil oder Camper.</p>
 </header>
 
 <div class="container">
+
+<div class="intro">
+<h2>Wohnmobil Elektrik einfach berechnen</h2>
+
+<p>
+Mit den Wohnmobil Rechnern von JUBE-TECH kannst du wichtige Werte für deine Camper-Elektrik schnell und einfach berechnen.
+Ob Batteriekapazität, täglicher Stromverbrauch, Solarertrag, Kabelquerschnitt, Spannungsabfall, Sicherungen oder Wechselrichter:
+Die Rechner helfen dir bei der Planung deiner 12V- oder 24V-Anlage im Wohnmobil.
+</p>
+
+<p>
+Besonders beim Selbstausbau ist eine saubere Berechnung wichtig. Zu kleine Kabel, falsche Sicherungen oder eine zu knapp geplante Batterie können später Probleme verursachen.
+Die Rechner liefern dir praxisnahe Orientierungswerte für LiFePO₄-Batterien, Solaranlagen, Wechselrichter und typische Verbraucher im Camper.
+</p>
+</div>
+
 <div class="grid">
 
 <div class="card">
 <a href="./AH WH Rechner/index.html">AH ↔ WH Rechner</a>
-<p>Amperestunden und Wattstunden einfach umrechnen.</p>
+<p>Amperestunden und Wattstunden für 12V-, 24V- und 230V-Systeme einfach umrechnen.</p>
 </div>
 
 <div class="card">
 <a href="./Batterie Rechner/index.html">Batterie Rechner</a>
-<p>Batteriekapazität und Energiebedarf für dein Wohnmobil berechnen.</p>
+<p>Batteriekapazität, Nutzenergie und Autarkiezeit für dein Wohnmobil berechnen.</p>
 </div>
 
 <div class="card">
 <a href="./Batterielaufzeit-Rechner Wohnmobil/index.html">Batterielaufzeit Rechner</a>
-<p>Berechne, wie lange deine Batterie Verbraucher versorgen kann.</p>
+<p>Berechne, wie lange deine Batterie bestimmte Verbraucher im Camper versorgen kann.</p>
 </div>
 
 <div class="card">
 <a href="./Energieverbrauch-Rechner Wohnmobil/index.html">Energieverbrauch Rechner</a>
-<p>Ermittle deinen täglichen Stromverbrauch im Camper oder Wohnmobil.</p>
+<p>Ermittle deinen täglichen Stromverbrauch im Wohnmobil oder Camper.</p>
 </div>
 
 <div class="card">
 <a href="./Kabelquerschnitt Rechner/index.html">Kabelquerschnitt Rechner</a>
-<p>Bestimme den passenden Kabelquerschnitt für sichere Leitungen.</p>
+<p>Bestimme den passenden Kabelquerschnitt für sichere 12V- und 24V-Leitungen.</p>
 </div>
 
 <div class="card">
 <a href="./Landstrom-Leistungsrechner/index.html">Landstrom Leistungsrechner</a>
-<p>Berechne Leistung und Stromaufnahme am Campingplatz.</p>
+<p>Berechne Leistung, Stromaufnahme und Belastung am Campingplatz-Landstrom.</p>
 </div>
 
 <div class="card">
 <a href="./MPPT Laderegler Rechner Wohnmobil/index.html">MPPT Laderegler Rechner</a>
-<p>Finde den passenden MPPT-Laderegler für deine Solaranlage.</p>
+<p>Finde den passenden MPPT-Laderegler für deine Wohnmobil-Solaranlage.</p>
 </div>
 
 <div class="card">
 <a href="./Sicherungs-Rechner Wohnmobil 12V-24V/index.html">Sicherungs Rechner</a>
-<p>Berechne die passende Sicherungsgröße für 12V- und 24V-Anlagen.</p>
+<p>Berechne die passende Sicherungsgröße für 12V- und 24V-Anlagen im Camper.</p>
 </div>
 
 <div class="card">
 <a href="./Solarertrag Rechner/index.html">Solarertrag Rechner</a>
-<p>Schätze den möglichen Solarertrag deiner Wohnmobil-Solaranlage.</p>
+<p>Schätze den möglichen Solarertrag deiner Wohnmobil-Solaranlage pro Tag.</p>
 </div>
 
 <div class="card">
 <a href="./Spannungsabfall-Rechner Wohnmobil 12V 24V/index.html">Spannungsabfall Rechner</a>
-<p>Berechne den Spannungsabfall bei 12V- und 24V-Leitungen.</p>
+<p>Berechne den Spannungsabfall bei 12V- und 24V-Leitungen im Wohnmobil.</p>
 </div>
 
 <div class="card">
 <a href="./Wechselrichter-Rechner Wohnmobil/index.html">Wechselrichter Rechner</a>
-<p>Finde die passende Wechselrichterleistung für deine Verbraucher.</p>
+<p>Finde die passende Wechselrichterleistung für Kaffeemaschine, Laptop, Föhn und Co.</p>
 </div>
 
 </div>
+
+<div class="faq">
+<h2>Häufige Fragen zu den Wohnmobil Rechnern</h2>
+
+<p><strong>Welche Rechner finde ich hier?</strong><br>
+Du findest Rechner für Batterie, Solarertrag, Kabelquerschnitt, Wechselrichter, Sicherungen, Spannungsabfall, Energieverbrauch, Batterielaufzeit und MPPT-Laderegler.</p>
+
+<p><strong>Sind die Rechner kostenlos?</strong><br>
+Ja, alle Wohnmobil Rechner können kostenlos genutzt werden.</p>
+
+<p><strong>Für welche Fahrzeuge sind die Rechner geeignet?</strong><br>
+Die Rechner eignen sich für Wohnmobile, Campervans, Kastenwagen, Wohnwagen und Selbstausbauten mit 12V- oder 24V-Elektrik.</p>
+
+<p><strong>Ersetzen die Rechner eine Fachberatung?</strong><br>
+Nein. Die Ergebnisse sind praxisnahe Orientierungswerte. Bei sicherheitsrelevanten Arbeiten an Elektrik, Sicherungen und Leitungen sollte eine fachkundige Prüfung erfolgen.</p>
+</div>
+
 </div>
 
 <footer>
-<p>© 2026 Wohnmobil Rechner | Copyright by <strong>Jube-Tech</strong></p>
+<p>© 2026 JUBE-TECH – Rechner für Wohnmobil-Elektrik, LiFePO₄ und Solartechnik</p>
 
 <p>
+<a href="index.html">Übersicht</a> |
 <a href="impressum.html">Impressum</a> |
 <a href="datenschutz.html">Datenschutz</a>
 </p>
