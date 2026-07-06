@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kabelquerschnitt Rechner Wohnmobil | Jube-Tech</title>
+
+<meta name="description" content="Kabelquerschnitt im Wohnmobil berechnen: 12V und 24V Systeme richtig auslegen, Spannungsabfall vermeiden und sichere Leitungen planen.">
+<meta name="keywords" content="Kabelquerschnitt Rechner Wohnmobil, 12V Kabel berechnen, Spannungsabfall Camper, Stromkabel Dimensionierung, LiFePO4 Verkabelung">
+<meta name="robots" content="index, follow">
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:20px;
+color:#222;
+}
+
+.back{
+max-width:780px;
+margin:0 auto 15px auto;
+}
+
+.back a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+max-width:780px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:26px;
+margin-bottom:10px;
+color:#0d6efd;
+}
+
+p{
+line-height:1.5;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:18px;
+background:#0077cc;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#005fa3;
+}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#eef7ff;
+border-left:5px solid #0077cc;
+border-radius:6px;
+font-size:16px;
+}
+
+.faq{
+margin-top:30px;
+}
+
+footer{
+margin-top:40px;
+font-size:13px;
+text-align:center;
+color:#777;
+}
+
+footer a{
+color:#0077cc;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="back">
+<a href="../index.html">← Zurück zur Rechner-Übersicht</a>
+</div>
+
+<div class="container">
+
+<h1>⚡ Kabelquerschnitt Rechner Wohnmobil</h1>
+
+<p>
+Berechne den richtigen <strong>Kabelquerschnitt für 12V und 24V Wohnmobil-Systeme</strong>.
+So vermeidest du Spannungsabfall, Leistungsverluste und gefährliche Überlastung.
+</p>
+
+<h2>Berechnung</h2>
+
+<label>Strom (Ampere)</label>
+<input type="number" id="strom" placeholder="z.B. 20">
+
+<label>Kabellänge einfach (Meter)</label>
+<input type="number" id="laenge" placeholder="z.B. 5">
+
+<label>Maximaler Spannungsabfall (%)</label>
+<input type="number" id="verlust" value="3">
+
+<button onclick="berechnen()">Querschnitt berechnen</button>
+
+<div class="result" id="ergebnis">
+Bitte Werte eingeben.
+</div>
+
+<div class="faq">
+
+<h2>Häufige Fragen</h2>
+
+<p><strong>Warum ist der Kabelquerschnitt wichtig?</strong><br>
+Zu dünne Kabel verursachen Spannungsverlust, Wärmeentwicklung und Leistungsverlust.</p>
+
+<p><strong>Was ist besser: 12V oder 24V?</strong><br>
+24V ist bei längeren Kabelstrecken oft effizienter, da bei gleicher Leistung weniger Strom fließt.</p>
+
+<p><strong>Wie viel Reserve sollte man einplanen?</strong><br>
+Plane immer mindestens 20–30% Sicherheitsreserve ein.</p>
+
+</div>
+
+<footer>
+<p>© 2026 JUBE-TECH – Rechner für Wohnmobil-Elektrik, LiFePO₄ und Solartechnik</p>
+
+<p>
+<a href="../index.html">Übersicht</a> |
+<a href="../impressum.html">Impressum</a> |
+<a href="../datenschutz.html">Datenschutz</a>
+</p>
+</footer>
+
+</div>
+
+<script>
+function berechnen() {
+
+let strom = parseFloat(document.getElementById("strom").value);
+let laenge = parseFloat(document.getElementById("laenge").value);
+let verlust = parseFloat(document.getElementById("verlust").value);
+
+if (!strom || !laenge || !verlust) {
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Bitte alle Werte korrekt eingeben.";
+return;
+}
+
+// Praxisnahe vereinfachte Schätzung für Wohnmobil 12V-Systeme
+let faktor = (strom * laenge * 2) / (verlust / 100 * 1000);
+let querschnitt = faktor * 1.2;
+
+let empfehlung = "";
+
+if (querschnitt <= 2.5)
+empfehlung = "2,5 mm²";
+else if (querschnitt <= 4)
+empfehlung = "4 mm²";
+else if (querschnitt <= 6)
+empfehlung = "6 mm²";
+else if (querschnitt <= 10)
+empfehlung = "10 mm²";
+else if (querschnitt <= 16)
+empfehlung = "16 mm²";
+else if (querschnitt <= 25)
+empfehlung = "25 mm²";
+else
+empfehlung = "35 mm² oder größer";
+
+document.getElementById("ergebnis").innerHTML =
+"<strong>⚡ Empfohlener Kabelquerschnitt:</strong> " + empfehlung + "<br><br>" +
+"📏 Berechnungswert: ca. " + querschnitt.toFixed(2).replace('.', ',') + " mm²<br><br>" +
+"👉 Hinweis: Bei 24V-Systemen kann der Querschnitt oft kleiner ausfallen als bei 12V.";
+}
+</script>
+
+</body>
+</html>

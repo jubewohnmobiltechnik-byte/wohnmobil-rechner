@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Landstrom Rechner Wohnmobil | Jube-Tech</title>
+
+<meta name="description" content="Landstrom im Wohnmobil berechnen: Prüfe, ob deine 6A, 10A oder 16A Campingplatz-Sicherung für deine Verbraucher ausreicht.">
+<meta name="keywords" content="Landstrom Rechner Wohnmobil, CEE 230V Campingplatz, Stromverbrauch Camper, 6A 10A 16A Absicherung, Strombedarf Wohnmobil">
+<meta name="robots" content="index, follow">
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:20px;
+color:#222;
+}
+
+.back{
+max-width:780px;
+margin:0 auto 15px auto;
+}
+
+.back a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+max-width:780px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:26px;
+margin-bottom:10px;
+color:#0d6efd;
+}
+
+p{
+line-height:1.5;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:18px;
+background:#0077cc;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#005fa3;
+}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#eef7ff;
+border-left:5px solid #0077cc;
+border-radius:6px;
+font-size:16px;
+}
+
+.faq{
+margin-top:30px;
+}
+
+footer{
+margin-top:40px;
+font-size:13px;
+text-align:center;
+color:#777;
+}
+
+footer a{
+color:#0077cc;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="back">
+<a href="../index.html">← Zurück zur Rechner-Übersicht</a>
+</div>
+
+<div class="container">
+
+<h1>🔌 Landstrom Rechner Wohnmobil (230V)</h1>
+
+<p>
+Berechne, ob dein <strong>Campingplatz-Anschluss (CEE 6A, 10A oder 16A)</strong> für deine Verbraucher ausreicht.
+Vermeide ausgelöste Sicherungen und unnötige Stromausfälle.
+</p>
+
+<h2>Berechnung</h2>
+
+<label>Gesamtleistung aller Geräte (Watt)</label>
+<input type="number" id="leistung" placeholder="z.B. 1500">
+
+<label>Netzspannung (Volt)</label>
+<input type="number" id="spannung" value="230">
+
+<button onclick="berechnen()">Landstrom prüfen</button>
+
+<div class="result" id="ergebnis">
+Bitte Werte eingeben.
+</div>
+
+<div class="faq">
+
+<h2>Häufige Fragen</h2>
+
+<p><strong>Wie viel Watt sind bei 10A möglich?</strong><br>
+Theoretisch etwa 2300 Watt. In der Praxis sollte etwas Reserve eingeplant werden.</p>
+
+<p><strong>Warum fliegt die Sicherung?</strong><br>
+Oft laufen mehrere starke Verbraucher gleichzeitig, beispielsweise Wasserkocher, Heizung oder Föhn.</p>
+
+<p><strong>Wie vermeide ich Überlastungen?</strong><br>
+Leistungsstarke Geräte möglichst nacheinander nutzen und Lastspitzen vermeiden.</p>
+
+</div>
+
+<footer>
+<p>© 2026 JUBE-TECH – Rechner für Wohnmobil-Elektrik, LiFePO₄ und Solartechnik</p>
+
+<p>
+<a href="../index.html">Übersicht</a> |
+<a href="../impressum.html">Impressum</a> |
+<a href="../datenschutz.html">Datenschutz</a>
+</p>
+</footer>
+
+</div>
+
+<script>
+function berechnen() {
+
+let w = parseFloat(document.getElementById("leistung").value);
+let v = parseFloat(document.getElementById("spannung").value);
+
+if (!w || !v) {
+document.getElementById("ergebnis").innerHTML =
+"⚠️ Bitte alle Werte korrekt eingeben.";
+return;
+}
+
+let strom = w / v;
+let empfehlung = "";
+let reserve = "";
+
+if (strom <= 6) {
+empfehlung = "✅ 6A Anschluss ausreichend";
+reserve = "Auch auf kleinen Campingplätzen problemlos nutzbar.";
+}
+else if (strom <= 10) {
+empfehlung = "✅ 10A Anschluss ausreichend";
+reserve = "Für die meisten Campingplätze geeignet.";
+}
+else if (strom <= 16) {
+empfehlung = "⚠️ 16A Anschluss erforderlich";
+reserve = "Auf ausreichende Absicherung achten.";
+}
+else {
+empfehlung = "❌ Verbrauch zu hoch";
+reserve = "Leistung reduzieren oder Verbraucher nacheinander nutzen.";
+}
+
+document.getElementById("ergebnis").innerHTML =
+"<strong>🔌 Strombedarf:</strong> " + strom.toFixed(1) + " A<br><br>" +
+"<strong>Bewertung:</strong> " + empfehlung + "<br><br>" +
+"💡 " + reserve + "<br><br>" +
+"👉 Tipp: Wasserkocher, Klimaanlage und Elektroheizung nicht gleichzeitig betreiben.";
+}
+</script>
+
+</body>
+</html>
