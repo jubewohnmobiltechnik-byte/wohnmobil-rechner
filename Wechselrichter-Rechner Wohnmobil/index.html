@@ -4,11 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Wechselrichter Rechner Wohnmobil | Jube-Tech</title>
+<title>Wechselrichter Rechner Wohnmobil | 12V 230V Leistung berechnen</title>
 
-<meta name="description" content="Wechselrichter im Wohnmobil berechnen: richtige Leistung (Watt), Spitzenlast und Dimensionierung für 12V und 24V Systeme.">
-<meta name="keywords" content="Wechselrichter Rechner Wohnmobil, Inverter Dimensionierung, 12V 230V Wechselrichter, Watt berechnen Camper, Spitzenlast Strom">
+<meta name="description" content="Wechselrichter Rechner für Wohnmobil und Camper: Berechne benötigte Wechselrichterleistung, Batteriestrom und Reserve für 12V und 24V Systeme.">
+<meta name="keywords" content="Wechselrichter Rechner Wohnmobil, Wechselrichter berechnen, 12V 230V Wechselrichter, Camper Wechselrichter, Sinus Wechselrichter Wohnmobil">
 <meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"Wie groß muss ein Wechselrichter im Wohnmobil sein?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Die Wechselrichtergröße richtet sich nach der Leistung der angeschlossenen 230V-Geräte. Zusätzlich sollte eine Reserve für Anlaufströme und Verluste eingeplant werden."
+}
+},
+{
+"@type":"Question",
+"name":"Wie viel Strom zieht ein Wechselrichter aus der Batterie?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Der Batteriestrom berechnet sich aus Leistung geteilt durch Batteriespannung. Bei 1200 Watt an 12 Volt fließen rechnerisch etwa 100 Ampere plus Verluste."
+}
+},
+{
+"@type":"Question",
+"name":"Brauche ich einen reinen Sinus Wechselrichter?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Für empfindliche Geräte wie Laptop-Netzteile, Kaffeemaschinen, Ladegeräte oder Haushaltsgeräte wird meist ein reiner Sinus Wechselrichter empfohlen."
+}
+},
+{
+"@type":"Question",
+"name":"Warum sind Kabel und Sicherung beim Wechselrichter wichtig?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Wechselrichter können auf der Batterieseite sehr hohe Ströme ziehen. Deshalb müssen Kabelquerschnitt und Sicherung passend dimensioniert werden."
+}
+}
+]
+}
+</script>
 
 <style>
 body{
@@ -20,7 +61,7 @@ color:#222;
 }
 
 .back{
-max-width:780px;
+max-width:820px;
 margin:0 auto 15px auto;
 }
 
@@ -31,7 +72,7 @@ font-weight:bold;
 }
 
 .container{
-max-width:780px;
+max-width:820px;
 margin:auto;
 background:white;
 padding:25px;
@@ -45,8 +86,13 @@ margin-bottom:10px;
 color:#0d6efd;
 }
 
+h2{
+margin-top:30px;
+color:#222;
+}
+
 p{
-line-height:1.5;
+line-height:1.6;
 }
 
 label{
@@ -75,7 +121,6 @@ border:none;
 border-radius:6px;
 font-size:16px;
 cursor:pointer;
-transition:0.2s;
 }
 
 button:hover{
@@ -88,7 +133,31 @@ padding:15px;
 background:#eef7ff;
 border-left:5px solid #0077cc;
 border-radius:6px;
-font-size:16px;
+}
+
+.info-box{
+background:#f8fbff;
+border-left:5px solid #0d6efd;
+padding:15px;
+border-radius:6px;
+margin-top:20px;
+}
+
+.links{
+margin-top:30px;
+padding:15px;
+background:#f5f7fa;
+border-radius:8px;
+}
+
+.links ul{
+padding-left:20px;
+}
+
+.links a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
 }
 
 .faq{
@@ -120,20 +189,31 @@ text-decoration:none;
 <h1>🔌 Wechselrichter Rechner Wohnmobil</h1>
 
 <p>
-Berechne die <strong>richtige Wechselrichtergröße für dein Wohnmobil</strong>.
-Wichtig für Kaffeemaschine, Föhn, Laptop und andere 230V-Verbraucher.
+Mit diesem <strong>Wechselrichter Rechner für Wohnmobil und Camper</strong> kannst du berechnen,
+welche Leistung dein Wechselrichter mindestens haben sollte. Außerdem zeigt dir der Rechner,
+wie hoch die Stromaufnahme auf der Batterieseite ungefähr ist.
 </p>
 
-<h2>Berechnung</h2>
+<p>
+Ein Wechselrichter wandelt 12V oder 24V Gleichspannung aus der Bordbatterie in 230V Wechselspannung um.
+Das ist praktisch für Kaffeemaschine, Laptop, Ladegeräte, Föhn oder kleine Haushaltsgeräte. Gleichzeitig
+entstehen dabei hohe Ströme auf der Batterieseite. Deshalb müssen Wechselrichterleistung, Batterie,
+Kabelquerschnitt und Sicherung zusammenpassen.
+</p>
 
-<label>Dauerleistung aller Geräte (Watt)</label>
-<input type="number" id="dauer" placeholder="z.B. 800">
+<h2>Wechselrichter berechnen</h2>
 
-<label>Spitzenlast zusätzlich (Watt)</label>
-<input type="number" id="spitze" placeholder="z.B. 1000">
+<label>Leistung des 230V-Verbrauchers (W)</label>
+<input type="number" id="leistung" placeholder="z.B. 1200">
 
-<label>Sicherheitsreserve (%)</label>
+<label>Anlaufstrom / Reserve (%)</label>
 <input type="number" id="reserve" value="25">
+
+<label>Batteriespannung (V)</label>
+<input type="number" id="spannung" value="12">
+
+<label>Wirkungsgrad Wechselrichter (%)</label>
+<input type="number" id="wirkungsgrad" value="90">
 
 <button onclick="berechnen()">Wechselrichter berechnen</button>
 
@@ -141,18 +221,60 @@ Wichtig für Kaffeemaschine, Föhn, Laptop und andere 230V-Verbraucher.
 Bitte Werte eingeben.
 </div>
 
+<div class="info-box">
+<strong>Formeln:</strong><br>
+Empfohlene Wechselrichterleistung = Verbraucherleistung plus Reserve<br>
+Batteriestrom = Verbraucherleistung ÷ Batteriespannung ÷ Wirkungsgrad
+</div>
+
+<h2>Warum braucht ein Wechselrichter Reserve?</h2>
+
+<p>
+Viele 230V-Geräte benötigen beim Einschalten kurzzeitig mehr Leistung als im normalen Betrieb.
+Motoren, Pumpen, Kompressoren, Kaffeemaschinen oder Netzteile können hohe Anlaufströme verursachen.
+Deshalb sollte der Wechselrichter nicht exakt auf die Nennleistung des Geräts ausgelegt werden.
+</p>
+
+<p>
+Auch der Wirkungsgrad spielt eine Rolle. Ein Wechselrichter arbeitet nicht verlustfrei. Ein Teil der Energie
+geht als Wärme verloren. Dadurch ist die Stromaufnahme aus der Batterie höher als die reine 230V-Leistung
+vermuten lässt.
+</p>
+
+<div class="links">
+<h2>Weitere hilfreiche Rechner</h2>
+<ul>
+<li><a href="../Batterie Rechner/index.html">Batterie Rechner</a></li>
+<li><a href="../kabelquerschnitt-rechner/index.html">Kabelquerschnitt Rechner</a></li>
+<li><a href="../energieverbrauch-rechner/index.html">Energieverbrauch Rechner</a></li>
+<li><a href="../ah-wh-rechner/index.html">Ah ↔ Wh Rechner</a></li>
+<li><a href="../batterie-ladezeit-rechner/index.html">Batterie Ladezeit Rechner</a></li>
+<li><a href="../solarertrag-rechner/index.html">Solarertrag Rechner</a></li>
+</ul>
+</div>
+
 <div class="faq">
 
-<h2>Häufige Fragen</h2>
+<h2>Häufige Fragen zum Wechselrichter Rechner</h2>
 
-<p><strong>Warum brauche ich Reserve?</strong><br>
-Viele Geräte haben hohe Einschaltströme. Eine Reserve schützt vor Überlastung und Abschaltungen.</p>
+<p><strong>Wie groß muss mein Wechselrichter sein?</strong><br>
+Der Wechselrichter sollte mindestens die Leistung des angeschlossenen Geräts liefern können.
+Zusätzlich ist eine Reserve von etwa 20 bis 50 Prozent sinnvoll.</p>
 
-<p><strong>Reicht ein 1000W Wechselrichter?</strong><br>
-Für kleine Verbraucher wie Laptop, Ladegeräte oder kleine Küchengeräte oft ja. Für Föhn, Kaffeemaschine oder Wasserkocher meist nicht.</p>
+<p><strong>Wie viel Strom zieht ein 1000W Wechselrichter bei 12V?</strong><br>
+Rechnerisch sind es etwa 83A. Mit Verlusten können es ungefähr 90 bis 100A sein.</p>
 
-<p><strong>Ist 12V oder 24V besser?</strong><br>
-Bei höheren Leistungen ist 24V oft effizienter, weil weniger Strom fließt und Kabelverluste geringer sind.</p>
+<p><strong>Ist ein 24V-System besser für große Wechselrichter?</strong><br>
+Bei 24V fließt bei gleicher Leistung nur etwa halb so viel Strom wie bei 12V. Das kann Kabel,
+Sicherung und Batterieanschluss entlasten.</p>
+
+<p><strong>Brauche ich einen reinen Sinus Wechselrichter?</strong><br>
+Für die meisten modernen Geräte ist ein reiner Sinus Wechselrichter empfehlenswert, besonders bei
+empfindlicher Elektronik, Ladegeräten und Haushaltsgeräten.</p>
+
+<p><strong>Warum werden Wechselrichterkabel so dick?</strong><br>
+Weil auf der Batterieseite sehr hohe Ströme fließen können. Zu dünne Kabel verursachen Spannungsabfall,
+Wärme und Leistungsverluste.</p>
 
 </div>
 
@@ -169,42 +291,46 @@ Bei höheren Leistungen ist 24V oft effizienter, weil weniger Strom fließt und 
 </div>
 
 <script>
-function berechnen() {
+function berechnen(){
 
-let dauer = parseFloat(document.getElementById("dauer").value);
-let spitze = parseFloat(document.getElementById("spitze").value);
+let leistung = parseFloat(document.getElementById("leistung").value);
 let reserve = parseFloat(document.getElementById("reserve").value);
+let spannung = parseFloat(document.getElementById("spannung").value);
+let wirkungsgrad = parseFloat(document.getElementById("wirkungsgrad").value);
 
-if (!dauer || !spitze) {
+if(!leistung || !spannung || !wirkungsgrad){
 document.getElementById("ergebnis").innerHTML =
 "⚠️ Bitte alle Pflichtwerte korrekt eingeben.";
 return;
 }
 
-if (!reserve) reserve = 0;
+if(!reserve) reserve = 0;
 
-let gesamt = dauer + spitze;
-let mitReserve = gesamt * (1 + reserve / 100);
+let empfohleneLeistung = leistung * (1 + reserve / 100);
+let strom = leistung / spannung / (wirkungsgrad / 100);
 
-let empfehlung = "";
+let standard = [300,500,600,1000,1500,2000,3000,4000,5000];
+let empfehlung = standard.find(w => w >= empfohleneLeistung);
 
-if (mitReserve <= 500)
-empfehlung = "500W";
-else if (mitReserve <= 1000)
-empfehlung = "1000W";
-else if (mitReserve <= 1500)
-empfehlung = "1500W";
-else if (mitReserve <= 2000)
-empfehlung = "2000W";
-else if (mitReserve <= 3000)
-empfehlung = "3000W";
+if(!empfehlung){
+empfehlung = "größer als 5000";
+}
+
+let bewertung = "";
+
+if(strom < 50)
+bewertung = "✅ Moderate Stromaufnahme";
+else if(strom < 150)
+bewertung = "⚠️ Hohe Stromaufnahme – Kabel und Sicherung sorgfältig planen";
 else
-empfehlung = "4000W oder größer";
+bewertung = "❌ Sehr hohe Stromaufnahme – starke Batterie, dicke Kabel und passende Sicherung nötig";
 
 document.getElementById("ergebnis").innerHTML =
-"<strong>🔌 Empfohlener Wechselrichter:</strong> " + empfehlung + "<br><br>" +
-"📊 Berechnete Last inkl. Reserve: " + mitReserve.toFixed(0) + " W<br><br>" +
-"👉 Tipp: Immer 20–30% Reserve für Einschaltströme und Spitzenlasten einplanen.";
+"<strong>🔌 Empfohlene Wechselrichtergröße:</strong> " + empfehlung + " W<br>" +
+"<strong>📊 Benötigte Leistung inkl. Reserve:</strong> " + empfohleneLeistung.toFixed(0) + " W<br><br>" +
+"<strong>🔋 Batteriestrom bei " + spannung.toFixed(0) + "V:</strong> " + strom.toFixed(1).replace('.', ',') + " A<br><br>" +
+"<strong>Status:</strong> " + bewertung + "<br><br>" +
+"👉 Prüfe zusätzlich Kabelquerschnitt, Sicherung und maximale Entladeleistung deiner Batterie.";
 }
 </script>
 
