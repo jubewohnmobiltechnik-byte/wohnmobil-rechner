@@ -4,11 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kabelquerschnitt Rechner Wohnmobil | Jube-Tech</title>
+<title>Kabelquerschnitt Rechner Wohnmobil | Kabel richtig dimensionieren</title>
 
-<meta name="description" content="Kabelquerschnitt im Wohnmobil berechnen: 12V und 24V Systeme richtig auslegen, Spannungsabfall vermeiden und sichere Leitungen planen.">
-<meta name="keywords" content="Kabelquerschnitt Rechner Wohnmobil, 12V Kabel berechnen, Spannungsabfall Camper, Stromkabel Dimensionierung, LiFePO4 Verkabelung">
+<meta name="description" content="Kabelquerschnitt Rechner für Wohnmobil und Camper. Berechne den passenden Kabelquerschnitt für 12V und 24V Systeme inklusive Spannungsabfall.">
+<meta name="keywords" content="Kabelquerschnitt Rechner Wohnmobil, Kabelquerschnitt 12V berechnen, Wohnmobil Kabel Rechner, Spannungsabfall Kabel, Camper Elektrik">
 <meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"Wie berechnet man den Kabelquerschnitt im Wohnmobil?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Der Kabelquerschnitt hängt von Stromstärke, Kabellänge, Spannung und zulässigem Spannungsabfall ab. Je höher Strom und Länge sind, desto größer muss der Querschnitt gewählt werden."
+}
+},
+{
+"@type":"Question",
+"name":"Wie viel Spannungsabfall ist zulässig?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Für Wohnmobile werden häufig 3 Prozent Spannungsabfall empfohlen. Bei empfindlichen Verbrauchern kann auch ein niedrigerer Wert sinnvoll sein."
+}
+},
+{
+"@type":"Question",
+"name":"Warum sind dickere Kabel bei 12 Volt wichtig?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Bei 12 Volt fließen höhere Ströme als bei 24 Volt. Deshalb sind größere Kabelquerschnitte erforderlich, um Verluste und Erwärmung zu vermeiden."
+}
+},
+{
+"@type":"Question",
+"name":"Was passiert bei zu dünnen Kabeln?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Zu dünne Kabel verursachen Spannungsverluste, Leistungsverluste und können sich stark erwärmen."
+}
+}
+]
+}
+</script>
 
 <style>
 body{
@@ -20,7 +61,7 @@ color:#222;
 }
 
 .back{
-max-width:780px;
+max-width:820px;
 margin:0 auto 15px auto;
 }
 
@@ -31,7 +72,7 @@ font-weight:bold;
 }
 
 .container{
-max-width:780px;
+max-width:820px;
 margin:auto;
 background:white;
 padding:25px;
@@ -45,8 +86,13 @@ margin-bottom:10px;
 color:#0d6efd;
 }
 
+h2{
+margin-top:30px;
+color:#222;
+}
+
 p{
-line-height:1.5;
+line-height:1.6;
 }
 
 label{
@@ -75,7 +121,6 @@ border:none;
 border-radius:6px;
 font-size:16px;
 cursor:pointer;
-transition:0.2s;
 }
 
 button:hover{
@@ -88,11 +133,31 @@ padding:15px;
 background:#eef7ff;
 border-left:5px solid #0077cc;
 border-radius:6px;
-font-size:16px;
 }
 
-.faq{
+.info-box{
+background:#f8fbff;
+border-left:5px solid #0d6efd;
+padding:15px;
+border-radius:6px;
+margin-top:20px;
+}
+
+.links{
 margin-top:30px;
+padding:15px;
+background:#f5f7fa;
+border-radius:8px;
+}
+
+.links ul{
+padding-left:20px;
+}
+
+.links a{
+color:#0077cc;
+text-decoration:none;
+font-weight:bold;
 }
 
 footer{
@@ -117,44 +182,82 @@ text-decoration:none;
 
 <div class="container">
 
-<h1>⚡ Kabelquerschnitt Rechner Wohnmobil</h1>
+<h1>🔌 Kabelquerschnitt Rechner Wohnmobil</h1>
 
 <p>
-Berechne den richtigen <strong>Kabelquerschnitt für 12V und 24V Wohnmobil-Systeme</strong>.
-So vermeidest du Spannungsabfall, Leistungsverluste und gefährliche Überlastung.
+Mit diesem <strong>Kabelquerschnitt Rechner für Wohnmobil und Camper</strong> kannst du den benötigten
+Kabelquerschnitt für deine 12V- oder 24V-Anlage berechnen. Die richtige Dimensionierung reduziert
+Spannungsverluste und sorgt für einen sicheren Betrieb von Batterie, Solar, Wechselrichter und Verbrauchern.
 </p>
 
-<h2>Berechnung</h2>
+<p>
+Gerade im Wohnmobil sind die Ströme oft hoch. Zu kleine Kabel führen zu Leistungsverlusten,
+Spannungsabfällen und unnötiger Erwärmung. Mit diesem Rechner erhältst du einen praxisnahen Richtwert
+für die Auswahl des passenden Kabels.
+</p>
 
-<label>Strom (Ampere)</label>
-<input type="number" id="strom" placeholder="z.B. 20">
+<h2>Kabelquerschnitt berechnen</h2>
 
-<label>Kabellänge einfach (Meter)</label>
-<input type="number" id="laenge" placeholder="z.B. 5">
+<label>Strom (A)</label>
+<input type="number" id="strom" placeholder="z.B. 50">
 
-<label>Maximaler Spannungsabfall (%)</label>
-<input type="number" id="verlust" value="3">
+<label>Kabellänge einfach (m)</label>
+<input type="number" id="laenge" placeholder="z.B. 4">
 
-<button onclick="berechnen()">Querschnitt berechnen</button>
+<label>Spannung (V)</label>
+<input type="number" id="spannung" value="12">
+
+<label>Zulässiger Spannungsabfall (%)</label>
+<input type="number" id="abfall" value="3">
+
+<button onclick="berechnen()">Kabelquerschnitt berechnen</button>
 
 <div class="result" id="ergebnis">
 Bitte Werte eingeben.
 </div>
 
-<div class="faq">
+<div class="info-box">
+<strong>Hinweis:</strong><br>
+Der Rechner berücksichtigt Hin- und Rückleitung und verwendet die Kupfer-Leitfähigkeit als Grundlage.
+</div>
+
+<h2>Warum ist der richtige Kabelquerschnitt wichtig?</h2>
+
+<p>
+Bei niedrigen Spannungen wie 12V wirken sich selbst kleine Spannungsverluste deutlich aus.
+Ein zu dünnes Kabel kann dazu führen, dass Verbraucher nicht mehr mit der erforderlichen Spannung
+versorgt werden. Besonders Wechselrichter, Ladebooster und große Solaranlagen reagieren empfindlich.
+</p>
+
+<p>
+Durch ausreichend dimensionierte Kabel wird die Effizienz der gesamten Bordelektrik verbessert.
+Das spart Energie und erhöht die Betriebssicherheit.
+</p>
+
+<div class="links">
+<h2>Weitere hilfreiche Rechner</h2>
+<ul>
+<li><a href="../Batterie Rechner/index.html">Batterie Rechner</a></li>
+<li><a href="../mppt-laderegler-rechner/index.html">MPPT Rechner</a></li>
+<li><a href="../ah-wh-rechner/index.html">Ah ↔ Wh Rechner</a></li>
+<li><a href="../solarertrag-rechner/index.html">Solarertrag Rechner</a></li>
+<li><a href="../energieverbrauch-rechner/index.html">Energieverbrauch Rechner</a></li>
+</ul>
+</div>
 
 <h2>Häufige Fragen</h2>
 
-<p><strong>Warum ist der Kabelquerschnitt wichtig?</strong><br>
-Zu dünne Kabel verursachen Spannungsverlust, Wärmeentwicklung und Leistungsverlust.</p>
+<p><strong>Welcher Kabelquerschnitt ist im Wohnmobil üblich?</strong><br>
+Je nach Anwendung werden häufig 2,5 mm² bis 50 mm² eingesetzt. Batteriekabel benötigen meist deutlich größere Querschnitte als Lichtkreise.</p>
 
-<p><strong>Was ist besser: 12V oder 24V?</strong><br>
-24V ist bei längeren Kabelstrecken oft effizienter, da bei gleicher Leistung weniger Strom fließt.</p>
+<p><strong>Wie viel Spannungsabfall ist sinnvoll?</strong><br>
+Für die meisten Anwendungen werden maximal 3 Prozent empfohlen.</p>
 
-<p><strong>Wie viel Reserve sollte man einplanen?</strong><br>
-Plane immer mindestens 20–30% Sicherheitsreserve ein.</p>
+<p><strong>Warum benötigen 12V-Anlagen dickere Kabel?</strong><br>
+Bei gleicher Leistung fließt bei 12V doppelt so viel Strom wie bei 24V.</p>
 
-</div>
+<p><strong>Was passiert bei zu kleinen Kabeln?</strong><br>
+Es entstehen Spannungsverluste, Erwärmung und unnötige Leistungsverluste.</p>
 
 <footer>
 <p>© 2026 JUBE-TECH – Rechner für Wohnmobil-Elektrik, LiFePO₄ und Solartechnik</p>
@@ -169,43 +272,41 @@ Plane immer mindestens 20–30% Sicherheitsreserve ein.</p>
 </div>
 
 <script>
-function berechnen() {
+function berechnen(){
 
 let strom = parseFloat(document.getElementById("strom").value);
 let laenge = parseFloat(document.getElementById("laenge").value);
-let verlust = parseFloat(document.getElementById("verlust").value);
+let spannung = parseFloat(document.getElementById("spannung").value);
+let abfall = parseFloat(document.getElementById("abfall").value);
 
-if (!strom || !laenge || !verlust) {
+if(!strom || !laenge || !spannung || !abfall){
 document.getElementById("ergebnis").innerHTML =
-"⚠️ Bitte alle Werte korrekt eingeben.";
+"⚠️ Bitte alle Werte eingeben.";
 return;
 }
 
-// Praxisnahe vereinfachte Schätzung für Wohnmobil 12V-Systeme
-let faktor = (strom * laenge * 2) / (verlust / 100 * 1000);
-let querschnitt = faktor * 1.2;
+let spannungsabfallVolt = spannung * (abfall / 100);
 
-let empfehlung = "";
+let querschnitt =
+(2 * laenge * strom * 0.0175) / spannungsabfallVolt;
 
-if (querschnitt <= 2.5)
-empfehlung = "2,5 mm²";
-else if (querschnitt <= 4)
-empfehlung = "4 mm²";
-else if (querschnitt <= 6)
-empfehlung = "6 mm²";
-else if (querschnitt <= 10)
-empfehlung = "10 mm²";
-else if (querschnitt <= 16)
-empfehlung = "16 mm²";
-else if (querschnitt <= 25)
-empfehlung = "25 mm²";
-else
-empfehlung = "35 mm² oder größer";
+const standard = [1.5,2.5,4,6,10,16,25,35,50,70,95];
+
+let empfehlung = standard.find(q => q >= querschnitt);
+
+if(!empfehlung){
+empfehlung = "größer als 95";
+}
 
 document.getElementById("ergebnis").innerHTML =
-"<strong>⚡ Empfohlener Kabelquerschnitt:</strong> " + empfehlung + "<br><br>" +
-"📏 Berechnungswert: ca. " + querschnitt.toFixed(2).replace('.', ',') + " mm²<br><br>" +
-"👉 Hinweis: Bei 24V-Systemen kann der Querschnitt oft kleiner ausfallen als bei 12V.";
+"<strong>🔌 Mindestquerschnitt:</strong> " +
+querschnitt.toFixed(2).replace('.', ',') +
+" mm²<br><br>" +
+
+"<strong>✅ Empfohlene Standardgröße:</strong> " +
+empfehlung + " mm²<br><br>" +
+
+"👉 Für Wohnmobile empfiehlt sich meist die nächstgrößere Standardgröße.";
 }
 </script>
 
